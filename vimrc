@@ -287,6 +287,5 @@ function! RT_ToggleMaximizedwindow()
 endfunction
 nmap <leader>m :call RT_ToggleMaximizedwindow()<CR>
 
-" Simplenote credentials
-***REMOVED***
-***REMOVED***
+" Private stuff
+source ~/dotfiles/private.vim
