@@ -1,0 +1,1 @@
+/Users/richardtessier/richard.tessier@gmail.com/.settings/vim/.vimrc
