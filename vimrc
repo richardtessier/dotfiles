@@ -179,7 +179,7 @@ nmap ,xp :let @*=expand("%:p")<CR>
 map ' `
 
 " Simplenote (nvalt in Vim)
-***REMOVED***
+let g:SimplenoteFiletype="markdown"
 noremap ,nl :Simplenote -l<CR>
 noremap ,nn :Simplenote -n<CR>
 noremap ,nu :Simplenote -u<CR>
