@@ -39,6 +39,7 @@ filetype plugin indent on    " required
 syntax enable
 set background=dark
 colorscheme solarized
+call togglebg#map(",st") " Initialize ToggleBG mapping
 
 " Sessionman options
 set sessionoptions=blank,buffers,curdir,folds,tabpages,winsize
@@ -285,7 +286,8 @@ function! RT_ToggleMaximizedwindow()
     :simalt ~x
   endif
 endfunction
-nmap <leader>m :call RT_ToggleMaximizedwindow()<CR>
+" Disable mapping since it only applies ot Windows version
+"nmap <leader>m :call RT_ToggleMaximizedwindow()<CR>
 
 " Private stuff
 source ~/dotfiles/private.vim
