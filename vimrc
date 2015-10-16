@@ -15,21 +15,23 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 " My Plugins
-Plugin 'mileszs/ack.vim'
 Plugin 'altercation/vim-colors-solarized'
+Plugin 'bling/vim-airline'
+Plugin 'edsono/vim-matchit'
+Plugin 'fatih/vim-go'
+Plugin 'jiangmiao/auto-pairs'
 Plugin 'jlanzarotta/bufexplorer'
-Plugin 'scrooloose/nerdtree'
-Plugin 'vim-scripts/sessionman.vim'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-repeat'
-Plugin 'tpope/vim-sleuth'
-Plugin 'matchit.zip'
 Plugin 'kana/vim-textobj-user'
 Plugin 'kana/vim-textobj-indent'
-Plugin 'bling/vim-airline'
+Plugin 'kana/vim-textobj-lastpat'
+Plugin 'mileszs/ack.vim'
 Plugin 'pangloss/vim-javascript'
-Plugin 'fatih/vim-go'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'scrooloose/nerdtree'
+Plugin 'tpope/vim-repeat'
+Plugin 'tpope/vim-sleuth'
+Plugin 'tpope/vim-surround'
+Plugin 'vim-scripts/sessionman.vim'
 
 
 call vundle#end()            " required
@@ -69,6 +71,8 @@ set hidden                          " Allow buffer switching without saving
 set tabpagemax=15               " Only show 15 tabs
 set showmode                    " Display the current mode
 set cursorline                  " Highlight current line
+set nowrap                      " Disable wrapping
+set laststatus=2                " Always display status line
 
 set number                      " Line numbers on
 set showmatch                   " Show matching brackets/parenthesis
@@ -225,6 +229,9 @@ cnoremap <expr> %% getcmdtype() == ':' ? expand('%:p').'/' : '%%'
 "unmap <Home>
 "unmap ^
 
+" Toggle hlsearch
+nmap <Leader>/ :set hlsearch! hlsearch?<CR>
+
 " CtrlP plugin mapping (why these are not out-of-the-box is beyond me!)"
 nmap <Leader>1 :CtrlPBuffer<CR>
 nmap <Leader>2 :CtrlPMRUFiles<CR>
@@ -251,9 +258,9 @@ nmap <Leader>tc :tabclose<CR>
 " json formatting through python for visual selection
 vmap <Leader>jt :!python -m json.tool<CR>
 
-" Remap ' in clojure files
 inoremap jj <ESC>
 
+" Remap ' in clojure files
 " Remap ' & ` in clojure files since we don't want them to "autoclose"
 autocmd BufEnter *.clj imap <buffer> ' '
 autocmd BufEnter *.clj imap <buffer> ` `
