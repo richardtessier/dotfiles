@@ -86,3 +86,6 @@ export PATH=$PATH:$GOPATH/bin
 
 # GitHub helpers, alias git->hub
 eval "$(hub alias -s)"
+
+# iTerm2 profile switcher function
+function it2prof() { echo -e "\033]50;SetProfile=$1\a" }
