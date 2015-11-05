@@ -190,18 +190,16 @@ noremap ,nn :Simplenote -n<CR>
 noremap ,nu :Simplenote -u<CR>
 noremap ,nd :Simplenote -d<CR>
 
-" spf13 bundle changes
-" Unbundle unused bundles
-"UnBundle 'spf13/vim-preview'
-"UnBundle 'myusuf3/numbers.vim'
-"UnBundle 'nathanaelkane/vim-indent-guides'
-"UnBundle 'tsaleh/vim-align'
-"UnBundle 'Shougo/neocomplete.vim.git'
-"UnBundle 'Shougo/neosnippet'
-"UnBundle 'Shougo/neosnippet-snippets'
+set backup                  " Backups are nice ...
+set undofile                " So is persistent undo ...
+set undolevels=1000         " Maximum number of changes that can be undone
+set undoreload=10000        " Maximum number lines to save for undo on a buffer reload
 
+set backupdir=$HOME/.vimbackup//
+set viewdir=$HOME/.vimviews//
+set directory=$HOME/.vimswap//
+set undodir=$HOME/.vimundo//
 
-" spf13 config changes
 " Make sure Vim clipboard is not clobbering the Windows clipboard
 set clipboard=
 " Override autochdir with a version that handles zipfiles properly

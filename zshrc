@@ -53,6 +53,15 @@ autoload -U edit-command-line
 zle -N edit-command-line
 bindkey '^T' edit-command-line
 
+# History
+autoload -U up-line-or-beginning-search
+autoload -U down-line-or-beginning-search
+zle -N up-line-or-beginning-search
+zle -N down-line-or-beginning-search
+bindkey '^P' up-line-or-beginning-search
+bindkey '^N' down-line-or-beginning-search
+#bindkey '^P' up-history
+#bindkey '^N' down-history
 # Tab completion
 #autoload -U compinit && compinit
 
@@ -63,9 +72,6 @@ autoload -U colors && colors
 bindkey -v
 bindkey -M viins 'jj' vi-cmd-mode
 
-# History
-bindkey '^P' up-history
-bindkey '^N' down-history
 bindkey '^_' undo
 bindkey -M vicmd "/" history-incremental-search-backward
 bindkey -M vicmd "?" history-incremental-search-forward
@@ -75,6 +81,7 @@ bindkey -M viins "^F" history-incremental-search-forward
 
 # Aliases
 alias truecrypt='/Applications/TrueCrypt.app/Contents/MacOS/Truecrypt --text'
+alias mvim='open -a MacVim.app'
 
 # Fuzzy file finder
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
