@@ -25,7 +25,12 @@ export ZSH_THEME="flazz"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # plugins=(git zshmarks vi-mode)
- plugins=(vi-mode jump)
+plugins=(vi-mode)
+fpath=(~/.zsh/completion $fpath)
+
+# TODO: Are there completions that I might use here? 
+#plugins+=(zsh-completions)
+#autoload -U compinit && compinit
 
 source $ZSH/oh-my-zsh.sh
 
@@ -77,7 +82,6 @@ bindkey -M vicmd "/" history-incremental-search-backward
 bindkey -M vicmd "?" history-incremental-search-forward
 bindkey -M viins "^R" history-incremental-search-backward
 bindkey -M viins "^F" history-incremental-search-forward
-
 
 # Aliases
 alias truecrypt='/Applications/TrueCrypt.app/Contents/MacOS/Truecrypt --text'

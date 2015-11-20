@@ -21,6 +21,7 @@ Plugin 'edsono/vim-matchit'
 Plugin 'fatih/vim-go'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'jlanzarotta/bufexplorer'
+Plugin 'junegunn/fzf.vim'
 Plugin 'kana/vim-textobj-user'
 Plugin 'kana/vim-textobj-indent'
 Plugin 'kana/vim-textobj-lastpat'
@@ -36,6 +37,10 @@ Plugin 'vim-scripts/sessionman.vim'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
+
+" fzf
+set rtp+=~/.fzf
+let g:fzf_launcher = "in_a_new_term_function %s"
 
 " Solarized colorscheme config
 syntax enable
