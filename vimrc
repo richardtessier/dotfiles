@@ -71,7 +71,7 @@ endif
 
 " General options
 set vb t_vb=
-set hidden                          " Allow buffer switching without saving
+set hidden                      " Allow buffer switching without saving
 
 set tabpagemax=15               " Only show 15 tabs
 set showmode                    " Display the current mode
@@ -88,6 +88,10 @@ set ignorecase                  " Case insensitive search
 set smartcase                   " Case sensitive when uc present
 set wildmenu                    " Show list instead of just completing
 set wildmode=full  		" Command <Tab> completion, list matches, then longest common part, then all.
+
+set tabstop=4
+set expandtab
+set shiftwidth=4
 
 " Override shell to always be TCC, quotes don't seem to work so use shortname!
 " Back in the Windows days, left here just in case :)
