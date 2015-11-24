@@ -192,6 +192,12 @@ nmap ,xp :let @*=expand("%:p")<CR>
 " ' to backtick so jumping to marks jumps to column
 map ' `
 
+" Window movement
+nmap <C-H> <C-W>h
+nmap <C-L> <C-W>l
+nmap <C-J> <C-W>j
+nmap <C-K> <C-W>k
+
 " Simplenote (nvalt in Vim)
 let g:SimplenoteFiletype="markdown"
 noremap ,nl :Simplenote -l<CR>
