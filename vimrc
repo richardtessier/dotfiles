@@ -54,6 +54,7 @@ if isdirectory(expand("~/.vim/bundle/sessionman.vim/"))
 	nmap <leader>sl :SessionList<CR>
 	nmap <leader>ss :SessionSave<CR>
 	nmap <leader>sc :SessionClose<CR>
+	nmap <leader>sw :SessionShowLast<CR>
 endif
 
 " vim-airline options
