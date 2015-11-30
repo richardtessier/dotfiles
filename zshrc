@@ -83,13 +83,48 @@ bindkey -M vicmd "?" history-incremental-search-forward
 bindkey -M viins "^R" history-incremental-search-backward
 bindkey -M viins "^F" history-incremental-search-forward
 
-# Aliases
+# Aliases & function (for arguments)
 alias truecrypt='/Applications/TrueCrypt.app/Contents/MacOS/Truecrypt --text'
 alias mvim='open -a MacVim.app'
+alias lt='ls -ltA'
+lth() { 
+  local headargs lsargs
+
+  # $1=Numeric, head -n $1 and $2 is path
+  # $1=String && $2=Numeric, $1 is path and head -n $2
+  # else use $1 as path (can be empty) and no argument to head
+  if [[ $1 =~ ^[0-9]+$ ]]; then
+    #echo "1"
+    headargs="-n $(( $1+1 ))"
+    lsargs="$2"
+  elif [[ -n $1 && $2 =~ ^[0-9]+$ ]]; then
+    #echo "2"
+    headargs="-n $(( $2+1 ))"
+    lsargs="$1"
+  else
+    #echo "3"
+    lsargs="$1"
+    headargs=""
+  fi
+
+  #eval "$lscmd" 
+  ls -ltA $lsargs | head $headargs 
+}
+
 
 # Fuzzy file finder
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_OPTS="--extended --cycle"
+
+# cd into the selected directory - with filter for large directories of little interest
+fzf-cd-widget-filtered() {
+  local cmd="${FZF_ALT_C_COMMAND:-"command find -L . \\( -path '*/\\.*' -o -fstype 'dev' -o -fstype 'proc' -o -path '*/Library' -o -path '*/Applications' \\) -prune \
+    -o -type d -print 2> /dev/null | sed 1d | cut -b3-"}"
+  cd "${$(eval "$cmd" | $(__fzfcmd) +m):-.}"
+  zle reset-prompt
+}
+zle     -N   fzf-cd-widget-filtered
+bindkey '^K' fzf-cd-widget-filtered
 
 # Go Development
 export GOPATH=$HOME/go
