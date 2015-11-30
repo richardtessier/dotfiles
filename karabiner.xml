@@ -1,5 +1,13 @@
 <?xml version="1.0"?>
 <root>
+  <appdef>
+    <appname>MACVIM</appname>
+    <equal>org.vim.MacVim</equal>
+  </appdef>
+  <appdef>
+    <appname>RSTUDIO</appname>
+    <equal>org.rstudio.RStudio</equal>
+  </appdef>
   <item>
       <name>Richard's Own Mappings</name>
       <item>
@@ -26,7 +34,7 @@
       <item>
           <name>French CMD+[/CMD+] -> CMD+è/CMD+à </name>
           <identifier>rtessier.private.global.commandbracket</identifier>
-          <not>CHROME</not>
+          <not>GOOGLE_CHROME</not>
           <!-- Command+9=C[ Command+0=Command+]-->
           <!-- Useful for Chrome forward & back for example-->
           <autogen>__KeyToKey__
@@ -37,6 +45,72 @@
               KeyCode::BACKSLASH,VK_COMMAND|ModifierFlag::NONE,
               KeyCode::KEY_0, ModifierFlag::COMMAND_L|ModifierFlag::OPTION_L
           </autogen>
+      </item>
+      <item>
+          <name>Developer Mappings</name>
+          <identifier>rtessier.private.developer</identifier>
+          <only>VI, TERMINAL, RSTUDIO, EXCEL</only>
+
+          <!--Greater than and less than-->
+          <autogen>__KeyToKey__
+              KeyCode::QUOTE,
+              KeyCode::COMMA, ModifierFlag::OPTION_L
+          </autogen>
+          <autogen>__KeyToKey__
+              KeyCode::BACKSLASH,
+              KeyCode::DOT, ModifierFlag::OPTION_L
+          </autogen>
+
+          <!--Brackets and curly braces-->
+          <autogen>__KeyToKey__
+              KeyCode::BRACKET_RIGHT,VK_CONTROL,
+              KeyCode::BRACKET_RIGHT, ModifierFlag::CONTROL_R
+          </autogen>
+          <autogen>__KeyToKey__
+              KeyCode::BRACKET_RIGHT,VK_SHIFT,
+              KeyCode::KEY_8, ModifierFlag::OPTION_L
+          </autogen>
+          <autogen>__KeyToKey__
+              KeyCode::BRACKET_LEFT,VK_SHIFT,
+              KeyCode::KEY_7, ModifierFlag::OPTION_L
+          </autogen>
+          <autogen>__KeyToKey__
+              KeyCode::BRACKET_LEFT,VK_OPTION,
+              KeyCode::BRACKET_LEFT,KeyCode::SPACE
+          </autogen>
+          <autogen>__KeyToKey__
+              KeyCode::BRACKET_RIGHT,VK_OPTION,
+              KeyCode::BRACKET_RIGHT,ModifierFlag::OPTION_L
+          </autogen>
+
+          <!--Shift+è=^, Shift+à=~ (required since we are remapping the ^ and ç keys below) -->
+          <autogen>__KeyToKey__
+              KeyCode::QUOTE,VK_SHIFT,
+              KeyCode::BRACKET_LEFT, KeyCode::SPACE
+          </autogen>
+          <autogen>__KeyToKey__
+              KeyCode::BACKSLASH,VK_SHIFT,
+              KeyCode::BRACKET_RIGHT, ModifierFlag::OPTION_L
+          </autogen>
+          <!--<autogen>__KeyToKey__ KeyCode::SLASH, KeyCode::BRACKET_LEFT,ModifierFlag::OPTION_L</autogen>-->
+
+          <!--Backtick-->
+          <autogen>__KeyToKey__
+              KeyCode::SLASH,
+              KeyCode::BRACKET_LEFT,ModifierFlag::OPTION_L,KeyCode::SPACE
+          </autogen>
+
+          <!--The direct keys have to be last since they would screw up the mappings with modifiers above-->
+          <autogen>__KeyToKey__
+              KeyCode::BRACKET_LEFT,
+              KeyCode::KEY_9, ModifierFlag::OPTION_L
+          </autogen>
+          <autogen>__KeyToKey__
+              KeyCode::BRACKET_RIGHT,
+              KeyCode::KEY_0, ModifierFlag::OPTION_L
+          </autogen>
+          <!-- Command+0=TAB,TAB,Command+]-->
+          <!-- Useful for Chrome forward & back for example-->
       </item>
       <item>
           <name>French CONTROL+CONTROL -> CONTROL+ù </name>
@@ -54,11 +128,7 @@
       <item>
           <name>Chrome French Mapping</name>
           <identifier>rtessier.private.chrome.french</identifier>
-          <appdef>
-              <appname>CHROME</appname>
-              <equal>com.google.Chrome</equal>
-          </appdef>
-          <only>CHROME</only>
+          <only>GOOGLE_CHROME</only>
           <!-- Command+0=TAB,TAB,Command+]-->
           <!-- Useful for Chrome forward & back for example-->
           <autogen>__KeyToKey__
@@ -87,12 +157,8 @@
           <!---->
       <!--</item>-->
       <item>
-          <name>RStudio Developer for French Keymap</name>
+          <name>RStudio Developer</name>
           <identifier>rtessier.private.rstudio</identifier>
-          <appdef>
-              <appname>RSTUDIO</appname>
-              <equal>org.rstudio.RStudio</equal>
-          </appdef>
           <only>RSTUDIO</only>
 
           <!-- %>% facilitating mappign to CMD+.-->
@@ -103,105 +169,22 @@
               KeyCode::KEY_5,ModifierFlag::SHIFT_L,
               KeyCode::SPACE
           </autogen>
-          <!--Greater than and less than-->
-          <autogen>__KeyToKey__
-              KeyCode::QUOTE,
-              KeyCode::COMMA, ModifierFlag::OPTION_L
-          </autogen>
-          <autogen>__KeyToKey__
-              KeyCode::BACKSLASH,
-              KeyCode::DOT, ModifierFlag::OPTION_L
-          </autogen>
-
-          <!--Brackets and curly braces-->
-          <autogen>__KeyToKey__
-              KeyCode::BRACKET_RIGHT,VK_CONTROL,
-              KeyCode::BRACKET_RIGHT, ModifierFlag::CONTROL_R
-          </autogen>
-          <autogen>__KeyToKey__
-              KeyCode::BRACKET_RIGHT,VK_SHIFT,
-              KeyCode::KEY_8, ModifierFlag::OPTION_L
-          </autogen>
-          <autogen>__KeyToKey__
-              KeyCode::BRACKET_LEFT,VK_SHIFT,
-              KeyCode::KEY_7, ModifierFlag::OPTION_L
-          </autogen>
-          <autogen>__KeyToKey__
-              KeyCode::BRACKET_LEFT,VK_OPTION,
-              KeyCode::BRACKET_LEFT,KeyCode::SPACE
-          </autogen>
-          <autogen>__KeyToKey__
-              KeyCode::BRACKET_RIGHT,VK_OPTION,
-              KeyCode::BRACKET_RIGHT,ModifierFlag::OPTION_L
-          </autogen>
-
-          <!--Shift+è=^, Shift+à=~ (required since we are remapping the ^ and ç keys below) -->
-          <autogen>__KeyToKey__
-              KeyCode::QUOTE,VK_SHIFT,
-              KeyCode::BRACKET_LEFT, KeyCode::SPACE
-          </autogen>
-          <autogen>__KeyToKey__
-              KeyCode::BACKSLASH,VK_SHIFT,
-              KeyCode::BRACKET_RIGHT, ModifierFlag::OPTION_L
-          </autogen>
-          <!--<autogen>__KeyToKey__ KeyCode::SLASH, KeyCode::BRACKET_LEFT,ModifierFlag::OPTION_L</autogen>-->
-
-          <!--Backtick-->
-          <autogen>__KeyToKey__
-              KeyCode::SLASH,
-              KeyCode::BRACKET_LEFT,ModifierFlag::OPTION_L,KeyCode::SPACE
-          </autogen>
-
-          <!--The direct keys have to be last since they would screw up the mappings with modifiers above-->
-          <autogen>__KeyToKey__
-              KeyCode::BRACKET_LEFT,
-              KeyCode::KEY_9, ModifierFlag::OPTION_L
-          </autogen>
-          <autogen>__KeyToKey__
-              KeyCode::BRACKET_RIGHT,
-              KeyCode::KEY_0, ModifierFlag::OPTION_L
-          </autogen>
       </item>
       <item>
-          <name>Vim Developer for French Keymap</name>
+          <name>Vim Developer (French Keymap)</name>
           <identifier>rtessier.private.macvim</identifier>
-          <appdef>
-              <appname>MACVIM</appname>
-              <equal>org.vim.MacVim</equal>
-          </appdef>
-          <only>MACVIM</only>
-          <!--Brackets and curly braces-->
-          <autogen>__KeyToKey__
-              KeyCode::BRACKET_RIGHT,VK_CONTROL,
-              KeyCode::BRACKET_RIGHT, ModifierFlag::CONTROL_R
-          </autogen>
-          <autogen>__KeyToKey__
-              KeyCode::BRACKET_RIGHT,VK_SHIFT,
-              KeyCode::KEY_8, ModifierFlag::OPTION_L
-          </autogen>
-          <autogen>__KeyToKey__
-              KeyCode::BRACKET_LEFT,VK_SHIFT,
-              KeyCode::KEY_7, ModifierFlag::OPTION_L
-          </autogen>
-          <autogen>__KeyToKey__
-              KeyCode::BRACKET_LEFT,VK_OPTION,
-              KeyCode::BRACKET_LEFT,KeyCode::SPACE
-          </autogen>
-          <autogen>__KeyToKey__
-              KeyCode::BRACKET_RIGHT,VK_OPTION,
-              KeyCode::BRACKET_RIGHT,ModifierFlag::OPTION_L
-          </autogen>
+          <only>VI</only>
 
 
           <!--Shift+è=^, Shift+à=~ (required since we are remapping the ^ and ç keys below) -->
-          <autogen>__KeyToKey__
-              KeyCode::QUOTE,VK_SHIFT,
-              KeyCode::BRACKET_LEFT, KeyCode::SPACE
-          </autogen>
-          <autogen>__KeyToKey__
-              KeyCode::BACKSLASH,VK_SHIFT,
-              KeyCode::BRACKET_RIGHT, ModifierFlag::OPTION_L
-          </autogen>
+          <!--<autogen>__KeyToKey__-->
+              <!--KeyCode::QUOTE,VK_SHIFT,-->
+              <!--KeyCode::BRACKET_LEFT, KeyCode::SPACE-->
+          <!--</autogen>-->
+          <!--<autogen>__KeyToKey__-->
+              <!--KeyCode::BACKSLASH,VK_SHIFT,-->
+              <!--KeyCode::BRACKET_RIGHT, ModifierFlag::OPTION_L-->
+          <!--</autogen>-->
           <!--<autogen>__KeyToKey__ KeyCode::SLASH, KeyCode::BRACKET_LEFT,ModifierFlag::OPTION_L</autogen>-->
 
           <!--Backtick-->
@@ -211,7 +194,7 @@
           </autogen>
 
           <!--The direct keys have to be last since they would screw up the mappings with modifiers above-->
-          <autogen>__KeyToKey__
+          <!--<autogen>__KeyToKey__
               KeyCode::BRACKET_LEFT,
               KeyCode::KEY_9, ModifierFlag::OPTION_L
           </autogen>
@@ -220,7 +203,7 @@
               KeyCode::KEY_0, ModifierFlag::OPTION_L
           </autogen>
 
-          <!--Greater than and less than-->
+          [>Greater than and less than<]
           <autogen>__KeyToKey__
               KeyCode::QUOTE,
               KeyCode::COMMA, ModifierFlag::OPTION_L
@@ -228,8 +211,7 @@
           <autogen>__KeyToKey__
               KeyCode::BACKSLASH,
               KeyCode::DOT, ModifierFlag::OPTION_L
-          </autogen>
-
+          </autogen> -->
       </item>
   </item>
   <!--
