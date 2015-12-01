@@ -33,6 +33,7 @@ Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-sleuth'
 Plugin 'tpope/vim-surround'
 Plugin 'vim-scripts/sessionman.vim'
+Plugin 'moll/vim-bbye'
 
 
 call vundle#end()            " required
@@ -262,7 +263,7 @@ nmap <A-Left> :bp<CR>
 " Buffer navigation shortcuts, more friendly than using :
 nmap <Leader>bn :bn<CR>
 nmap <Leader>bp :bp<CR>
-nmap <Leader>bd :bd<CR>
+nmap <Leader>bd :Bdelete<CR>
 nmap <Leader>bm :bm<CR>
 
 " Tab helpers
