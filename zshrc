@@ -94,21 +94,19 @@ lth() {
   # $1=String && $2=Numeric, $1 is path and head -n $2
   # else use $1 as path (can be empty) and no argument to head
   if [[ $1 =~ ^[0-9]+$ ]]; then
-    #echo "1"
-    headargs="-n $(( $1+1 ))"
-    lsargs="$2"
-  elif [[ -n $1 && $2 =~ ^[0-9]+$ ]]; then
-    #echo "2"
-    headargs="-n $(( $2+1 ))"
-    lsargs="$1"
+    #echo "Limit to n lines"
+    headargs="-n $(( $1+0 ))"
+    lsargs="${argv[2,$#]}"
   else
-    #echo "3"
-    lsargs="$1"
+    #echo "Assume all args are files"
+    lsargs="${argv}"
     headargs=""
   fi
 
   #eval "$lscmd" 
-  ls -ltA $lsargs | head $headargs 
+  #lsargs="dev2/bmc/Queries_2015-12-07/*.zip"
+  #echo "${=lsargs}"
+  ls -ltA ${=lsargs} | head ${headargs} 
 }
 
 
