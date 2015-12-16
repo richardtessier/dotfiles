@@ -22,10 +22,13 @@ Plugin 'fatih/vim-go'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'jlanzarotta/bufexplorer'
 Plugin 'junegunn/fzf.vim'
-Plugin 'kana/vim-textobj-user'
 Plugin 'kana/vim-textobj-indent'
 Plugin 'kana/vim-textobj-lastpat'
+Plugin 'kana/vim-textobj-user'
+Plugin 'mattn/gist-vim'
+Plugin 'mattn/webapi-vim'
 Plugin 'mileszs/ack.vim'
+Plugin 'moll/vim-bbye'
 Plugin 'pangloss/vim-javascript'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
@@ -33,7 +36,6 @@ Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-sleuth'
 Plugin 'tpope/vim-surround'
 Plugin 'vim-scripts/sessionman.vim'
-Plugin 'moll/vim-bbye'
 
 
 call vundle#end()            " required
@@ -62,11 +64,11 @@ endif
 let g:airline#extensions#tabline#enabled = 1
 
 "Window size
-set lines=60
-set columns=120
 if has("gui_macvim")
     " set macvim specific stuff
     set transparency=2
+    set lines=60
+    set columns=120
 else
     set mouse=
 endif
