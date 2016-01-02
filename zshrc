@@ -67,8 +67,10 @@ bindkey '^P' up-line-or-beginning-search
 bindkey '^N' down-line-or-beginning-search
 #bindkey '^P' up-history
 #bindkey '^N' down-history
+#
 # Tab completion
 #autoload -U compinit && compinit
+bindkey -M menuselect '^[[Z' reverse-menu-complete
 
 # Make sure colors work
 autoload -U colors && colors
@@ -86,7 +88,9 @@ bindkey -M viins "^F" history-incremental-search-forward
 # Aliases & function (for arguments)
 alias truecrypt='/Applications/TrueCrypt.app/Contents/MacOS/Truecrypt --text'
 alias mvim='open -a MacVim.app'
-alias lt='ls -ltA'
+alias lt='ls -lt'
+alias lta='ls -ltA'
+
 lth() { 
   local headargs lsargs
 
@@ -106,9 +110,12 @@ lth() {
   #eval "$lscmd" 
   #lsargs="dev2/bmc/Queries_2015-12-07/*.zip"
   #echo "${=lsargs}"
-  ls -ltA ${=lsargs} | head ${headargs} 
+  ls -lt ${=lsargs} | head ${headargs} 
 }
 
+ff() { 
+  find . -not \( -path "*/Library/*" -o -path "*/Applications/*" -o -path "*/.Trash/*" -o -path "*Microsoft Lync History/*" -prune \) -name $* 
+}
 
 # Fuzzy file finder
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
