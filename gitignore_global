@@ -35,5 +35,6 @@
 .Trashes
 ehthumbs.db
 
-# Editor temp files #
+# Vim ignores
 *.vim.swp
+Session.vim
