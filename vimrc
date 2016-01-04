@@ -28,13 +28,15 @@ Plugin 'kana/vim-textobj-lastpat'
 Plugin 'kana/vim-textobj-user'
 Plugin 'mattn/gist-vim'
 Plugin 'mattn/webapi-vim'
+Plugin 'mbbill/undotree'
 Plugin 'mileszs/ack.vim'
 Plugin 'moll/vim-bbye'
 Plugin 'pangloss/vim-javascript'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
+Plugin 'tpope/vim-obsession'
 Plugin 'tpope/vim-repeat'
-Plugin 'tpope/vim-sleuth'
+"Plugin 'tpope/vim-sleuth'
 Plugin 'tpope/vim-surround'
 Plugin 'vim-scripts/sessionman.vim'
 
@@ -149,24 +151,20 @@ set nolist " Disable listchars processing
 noremap <C-S>		:update<CR>
 vnoremap <C-S>		<C-C>:update<CR>
 inoremap <C-S>		<C-O>:update<CR>
-" CTRL-X and SHIFT-Del are Cut
-vnoremap <C-X> "+x
-vnoremap <S-Del> "+x
 
-" CTRL-C is Copy
-"vnoremap <C-C> "+y
-"vnoremap <C-Insert> "+y
+" Easy copy to clipboard
+noremap <Leader>yy "+yy
+noremap <Leader>yw "+yiw
+noremap <Leader>yl "+y$
+noremap <Leader>ya ggVG"+y''
+vnoremap <Leader>yy "+y
 
 " Cmd-V is Paste
 map <D-V> "+gP
 inoremap <D-V> +
 cmap <D-V> <C-R>+
 
-"map <S-Insert> "+gP
-"cmap <S-Insert> <C-R>+
-
 " CTRL-A is Select all
-"noremap <C-A> gggH<C-O>G
 "inoremap <C-A> <C-O>gg<C-O>gH<C-O>G
 "cnoremap <C-A> <C-C>gggH<C-O>G
 "onoremap <C-A> <C-C>gggH<C-O>G
@@ -251,17 +249,13 @@ cnoremap <expr> %% getcmdtype() == ':' ? expand('%:p').'/' : '%%'
 nmap <Leader>/ :set hlsearch! hlsearch?<CR>
 
 " CtrlP plugin mapping (why these are not out-of-the-box is beyond me!)"
-nmap <Leader>1 :CtrlPBuffer<CR>
-nmap <Leader>2 :CtrlPMRUFiles<CR>
-nmap <Leader>3 :CtrlP<CR>
-nmap <Leader>4 :CtrlP
+"nmap <Leader>1 :CtrlPBuffer<CR>
+"nmap <Leader>2 :CtrlPMRUFiles<CR>
+"nmap <Leader>3 :CtrlP<CR>
+"nmap <Leader>4 :CtrlP
 
 " Session.vim additional SessionClose mapping
 nmap ,sc :SessionClose<CR>
-
-" Buffer next, previous on Alt-left & Right. Can't live without it :)
-nmap <A-Right> :bn<CR>
-nmap <A-Left> :bp<CR>
 
 " Buffer navigation shortcuts, more friendly than using :
 nmap <Leader>bn :bn<CR>
