@@ -17,6 +17,7 @@ Plugin 'VundleVim/Vundle.vim'
 " My Plugins
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'bling/vim-airline'
+Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'edsono/vim-matchit'
 Plugin 'fatih/vim-go'
 Plugin 'jiangmiao/auto-pairs'
@@ -37,7 +38,6 @@ Plugin 'tpope/vim-sleuth'
 Plugin 'tpope/vim-surround'
 Plugin 'vim-scripts/sessionman.vim'
 
-
 call vundle#end()            " required
 filetype plugin indent on    " required
 
@@ -54,10 +54,10 @@ call togglebg#map(",st") " Initialize ToggleBG mapping
 " Sessionman options
 set sessionoptions=blank,buffers,curdir,folds,tabpages,winsize
 if isdirectory(expand("~/.vim/bundle/sessionman.vim/"))
-	nmap <leader>sl :SessionList<CR>
-	nmap <leader>ss :SessionSave<CR>
-	nmap <leader>sc :SessionClose<CR>
-	nmap <leader>sw :SessionShowLast<CR>
+  nmap <leader>sl :SessionList<CR>
+  nmap <leader>ss :SessionSave<CR>
+  nmap <leader>sc :SessionClose<CR>
+  nmap <leader>sw :SessionShowLast<CR>
 endif
 
 " vim-airline options
@@ -153,16 +153,17 @@ inoremap <C-S>		<C-O>:update<CR>
 vnoremap <C-X> "+x
 vnoremap <S-Del> "+x
 
-" CTRL-C and CTRL-Insert are Copy
-vnoremap <C-C> "+y
-vnoremap <C-Insert> "+y
+" CTRL-C is Copy
+"vnoremap <C-C> "+y
+"vnoremap <C-Insert> "+y
 
-" CTRL-V and SHIFT-Insert are Paste
-map <C-V> "+gP
-map <S-Insert> "+gP
-inoremap <C-V> +
-cmap <C-V> <C-R>+
-cmap <S-Insert> <C-R>+
+" Cmd-V is Paste
+map <D-V> "+gP
+inoremap <D-V> +
+cmap <D-V> <C-R>+
+
+"map <S-Insert> "+gP
+"cmap <S-Insert> <C-R>+
 
 " CTRL-A is Select all
 "noremap <C-A> gggH<C-O>G
