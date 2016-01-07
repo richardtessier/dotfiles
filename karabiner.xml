@@ -116,7 +116,20 @@
       </autogen>
     </item>
     <item>
-      <name>French CONTROL+CONTROL -> CONTROL+ù </name>
+      <name>Switch Desktop via Control-Left/Right Arrows</name>
+      <identifier>rtessier.private.global.switchdesktop</identifier>
+      <not>POWERPOINT</not>
+      <autogen>__KeyToKey__
+        KeyCode::CURSOR_LEFT, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL,
+        KeyCode::QUOTE, ModifierFlag::CONTROL_R
+      </autogen>
+      <autogen>__KeyToKey__
+        KeyCode::CURSOR_RIGHT, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL,
+        KeyCode::BACKSLASH, ModifierFlag::CONTROL_R
+      </autogen>
+    </item>
+    <item>
+      <name>Moom activated Control + Control</name>
       <identifier>rtessier.private.global.control2</identifier>
       <!-- remap pressing the left & right command twice to Control+ù, invoking Moom -->
       <autogen>__DoublePressModifier__
