@@ -56,10 +56,10 @@ call togglebg#map(",st") " Initialize ToggleBG mapping
 " Sessionman options
 set sessionoptions=blank,buffers,curdir,folds,tabpages,winsize
 if isdirectory(expand("~/.vim/bundle/sessionman.vim/"))
-  nmap <leader>sl :SessionList<CR>
-  nmap <leader>ss :SessionSave<CR>
-  nmap <leader>sc :SessionClose<CR>
-  nmap <leader>sw :SessionShowLast<CR>
+  nnoremap <leader>sl :SessionList<CR>
+  nnoremap <leader>ss :SessionSave<CR>
+  nnoremap <leader>sc :SessionClose<CR>
+  nnoremap <leader>sw :SessionShowLast<CR>
 endif
 
 " vim-airline options
@@ -79,30 +79,27 @@ endif
 set vb t_vb=
 set hidden                      " Allow buffer switching without saving
 
-set tabpagemax=15               " Only show 15 tabs
-set showmode                    " Display the current mode
-set cursorline                  " Highlight current line
-set nowrap                      " Disable wrapping
 set laststatus=2                " Always display status line
+set nocursorline                " Highlight current line
+set nowrap                      " Disable wrapping
+set showmode                    " Display the current mode
+set tabpagemax=15               " Only show 15 tabs
 
+set hlsearch                    " Highlight search terms
+set ignorecase                  " Case insensitive search
+set incsearch                   " Find as you type search
 set number                      " Line numbers on
 set showmatch                   " Show matching brackets/parenthesis
-set incsearch                   " Find as you type search
-set hlsearch                    " Highlight search terms
-set winminheight=0              " Windows can be 0 line high
-set ignorecase                  " Case insensitive search
 set smartcase                   " Case sensitive when uc present
 set wildmenu                    " Show list instead of just completing
-set wildmode=full  		" Command <Tab> completion, list matches, then longest common part, then all.
+set wildmode=full               " Command <Tab> completion, list matches, then longest common part, then all.
+set winminheight=0              " Windows can be 0 line high
 
-set tabstop=4
 set expandtab
 set shiftwidth=4
+set tabstop=4
 
-" Override shell to always be TCC, quotes don't seem to work so use shortname!
-" Back in the Windows days, left here just in case :)
-""set shell=c:\progra~1\jpsoft\tccle13x64\tcc.exe
-
+set timeout timeoutlen=3000 ttimeoutlen=100
 
 " GUI
 " set guifont=Consolas:h9:cANSI
@@ -148,21 +145,21 @@ set nolist " Disable listchars processing
 " Mappings
 " Windows friendly
 " Use CTRL-S for saving, also in Insert mode
-noremap <C-S>		:update<CR>
+noremap  <C-S>		:update<CR>
 vnoremap <C-S>		<C-C>:update<CR>
 inoremap <C-S>		<C-O>:update<CR>
 
 " Easy copy to clipboard
-noremap <Leader>yy "+yy
-noremap <Leader>yw "+yiw
-noremap <Leader>yl "+y$
-noremap <Leader>ya ggVG"+y''
+noremap  <Leader>yy "+yy
+noremap  <Leader>yw "+yiw
+noremap  <Leader>y "+y
+noremap  <Leader>ya ggVG"+y''
 vnoremap <Leader>yy "+y
 
 " Cmd-V is Paste
 map <D-V> "+gP
 inoremap <D-V> +
-cmap <D-V> <C-R>+
+cnoremap <D-V> <C-R>+
 
 " CTRL-A is Select all
 "inoremap <C-A> <C-O>gg<C-O>gH<C-O>G
@@ -172,7 +169,7 @@ cmap <D-V> <C-R>+
 "xnoremap <C-A> <C-C>ggVG
 
 "NERDTree easy access
-nmap ,e :NERDTree<CR>
+nnoremap ,e :NERDTree<CR>
 
 "History search switch from arrows to Ctrl-N/Ctrl-P
 cnoremap  <Down>
@@ -189,17 +186,17 @@ nnoremap & :&&<Enter>
 xnoremap & :&&<Enter>
 
 " Copy filename to clipboard (xf=file,xp=path+file)
-nmap ,xf :let @*=expand("%")<CR>
-nmap ,xp :let @*=expand("%:p")<CR>
+nnoremap ,xf :let @*=expand("%")<CR>
+nnoremap ,xp :let @*=expand("%:p")<CR>
 
 " ' to backtick so jumping to marks jumps to column
 map ' `
 
 " Window movement
-nmap <C-H> <C-W>h
-nmap <C-L> <C-W>l
-nmap <C-J> <C-W>j
-nmap <C-K> <C-W>k
+nnoremap <C-H> <C-W>h
+nnoremap <C-L> <C-W>l
+nnoremap <C-J> <C-W>j
+nnoremap <C-K> <C-W>k
 
 " Simplenote (nvalt in Vim)
 let g:SimplenoteFiletype="markdown"
@@ -231,51 +228,57 @@ autocmd BufEnter * if bufname("") !~? "\\v([A-Za-z0-9]*://)|(.*zipfile:.+::)" | 
 " Remove W->w, it interferes with all W typed on the command line
 " Remove ;->:, I use the ; for next in combination with f or t
 cnoremap <expr> %% getcmdtype() == ':' ? expand('%:p').'/' : '%%'
-"cunmap W
-"unmap ;
-"unmap [F
-"iunmap [F
-"unmap [H
-"iunmap [H
-"unmap <C-e>
+"cunnoremap W
+"unnoremap ;
+"unnoremap [F
+"iunnoremap [F
+"unnoremap [H
+"iunnoremap [H
+"unnoremap <C-e>
 
-"unmap $
-"unmap <End>
-"unmap 0
-"unmap <Home>
-"unmap ^
+"unnoremap $
+"unnoremap <End>
+"unnoremap 0
+"unnoremap <Home>
+"unnoremap ^
 
 " Toggle hlsearch
-nmap <Leader>/ :set hlsearch! hlsearch?<CR>
+nnoremap <Leader>/ :set hlsearch! hlsearch?<CR>
 
 " CtrlP plugin mapping (why these are not out-of-the-box is beyond me!)"
-"nmap <Leader>1 :CtrlPBuffer<CR>
-"nmap <Leader>2 :CtrlPMRUFiles<CR>
-"nmap <Leader>3 :CtrlP<CR>
-"nmap <Leader>4 :CtrlP
+"nnoremap <Leader>1 :CtrlPBuffer<CR>
+"nnoremap <Leader>2 :CtrlPMRUFiles<CR>
+"nnoremap <Leader>3 :CtrlP<CR>
+"nnoremap <Leader>4 :CtrlP
 
 " Session.vim additional SessionClose mapping
-nmap ,sc :SessionClose<CR>
+nnoremap ,sc :SessionClose<CR>
 
 " Buffer navigation shortcuts, more friendly than using :
-nmap <Leader>bn :bn<CR>
-nmap <Leader>bp :bp<CR>
-nmap <Leader>bd :Bdelete<CR>
-nmap <Leader>bm :bm<CR>
+nnoremap <Leader>bn :bn<CR>
+nnoremap <Leader>bp :bp<CR>
+nnoremap <Leader>bd :Bdelete<CR>
+nnoremap <Leader>bm :bm<CR>
+
+" fzf based-mappings (buffers, maps, history, ...)
+nnoremap <Leader>fb :Buffers<CR>
+nnoremap <Leader>fh :History<CR>
+nnoremap <Leader>fm :Maps<CR>
+nnoremap <Leader>ff :Files<CR>
 
 " Tab helpers
-nmap <Leader>tn :tabnew<CR>
-nmap <Leader>tc :tabclose<CR>
+nnoremap <Leader>tn :tabnew<CR>
+nnoremap <Leader>tc :tabclose<CR>
 
 " json formatting through python for visual selection
-vmap <Leader>jt :!python -m json.tool<CR>
+vnoremap <Leader>jt :!python -m json.tool<CR>
 
 inoremap jj <ESC>
 
 " Remap ' in clojure files
 " Remap ' & ` in clojure files since we don't want them to "autoclose"
-autocmd BufEnter *.clj imap <buffer> ' '
-autocmd BufEnter *.clj imap <buffer> ` `
+autocmd BufEnter *.clj inoremap <buffer> ' '
+autocmd BufEnter *.clj inoremap <buffer> ` `
 
 " Set filetype to xml for .config files, useful for asp.net configuration
 " files
@@ -306,7 +309,7 @@ function! RT_ToggleMaximizedwindow()
   endif
 endfunction
 " Disable mapping since it only applies ot Windows version
-"nmap <leader>m :call RT_ToggleMaximizedwindow()<CR>
+"nnoremap <leader>m :call RT_ToggleMaximizedwindow()<CR>
 
 " Private stuff
 source ~/dotfiles/private.vim
