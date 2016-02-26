@@ -150,12 +150,11 @@ noremap  <C-S>		:update<CR>
 vnoremap <C-S>		<C-C>:update<CR>
 inoremap <C-S>		<C-O>:update<CR>
 
-" Easy copy to clipboard
-noremap  <Leader>yy "+yy
-noremap  <Leader>yw "+yiw
+" Easy copy to / from clipboard
 noremap  <Leader>y "+y
-noremap  <Leader>ya ggVG"+y''
-vnoremap <Leader>yy "+y
+noremap  <Leader>ya :%y+<CR>
+noremap  <Leader>p "+p
+noremap  <Leader>P "+P
 
 " Cmd-V is Paste
 map <D-V> "+gP
@@ -201,10 +200,12 @@ nnoremap <C-K> <C-W>k
 
 " Simplenote (nvalt in Vim)
 let g:SimplenoteFiletype="markdown"
+let g:SimplenoteVertical=1
 noremap ,nl :Simplenote -l<CR>
 noremap ,nn :Simplenote -n<CR>
 noremap ,nu :Simplenote -u<CR>
 noremap ,nd :Simplenote -d<CR>
+noremap ,nt :Simplenote -o a0fcb908a3304f7d8563e22dcd21f6a4<CR>
 
 set backup                  " Backups are nice ...
 set undofile                " So is persistent undo ...
