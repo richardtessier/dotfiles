@@ -1,4 +1,4 @@
-set nocompatible        " Must be first line
+set nocompatible " Must be first line
 
 " Leader
 let mapleader = ","
