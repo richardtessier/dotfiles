@@ -121,6 +121,7 @@ ff() {
 # Fuzzy file finder
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_OPTS="--extended --cycle"
+export FZF_CTRL_R_OPTS="--sort --tiebreak=begin,length,index"
 
 # cd into the selected directory - with filter for large directories of little interest
 fzf-cd-widget-filtered() {
