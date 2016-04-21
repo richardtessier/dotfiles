@@ -87,8 +87,7 @@ bindkey -M viins "^R" history-incremental-search-backward
 bindkey -M viins "^F" history-incremental-search-forward
 
 # Aliases & function (for arguments)
-alias truecrypt='/Applications/TrueCrypt.app/Contents/MacOS/Truecrypt --text'
-alias mvim='open -a MacVim.app'
+#alias mvim='open -a MacVim.app'
 alias lt='ls -lt'
 alias lta='ls -ltA'
 
@@ -118,6 +117,8 @@ ff() {
   find . -not \( -path "*/Library/*" -o -path "*/Applications/*" -o -path "*/.Trash/*" -o -path "*Microsoft Lync History/*" -prune \) -name $* 
 }
 
+alias showfiles='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app'
+alias hidefiles='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app'
 # Fuzzy file finder
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_OPTS="--extended --cycle"
