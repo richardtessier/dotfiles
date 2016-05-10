@@ -138,6 +138,9 @@ bindkey '^K' fzf-cd-widget-filtered
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
 
+# Terminal Columns
+export COLUMNS
+
 # GitHub helpers, alias git->hub
 eval "$(hub alias -s)"
 
