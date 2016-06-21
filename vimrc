@@ -135,7 +135,11 @@ set history=1000                " Store a ton of history (default is 20)
 set synmaxcol=150
 
 " Set viminfo, store in cloudsync
-set viminfo='100,<50,s10,h,rA:,rB:,n$HOME/cloudsync/.settings/vim/.viminfo
+if has('nvim')
+    set viminfo='100,<50,s10,h,rA:,rB
+else
+    set viminfo='100,<50,s10,h,rA:,rB:,n$HOME/cloudsync/.settings/vim/.viminfo
+endif
 
 " Set additional config options
 set number
@@ -314,4 +318,4 @@ endfunction
 "nnoremap <leader>m :call RT_ToggleMaximizedwindow()<CR>
 
 " Private stuff
-source ~/dotfiles/private.vim
+"source ~/dotfiles/private.vim
