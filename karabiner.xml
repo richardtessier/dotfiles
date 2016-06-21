@@ -133,12 +133,12 @@
       <identifier>rtessier.private.global.control2</identifier>
       <!-- remap pressing the left & right command twice to Control+ù, invoking Moom -->
       <autogen>__DoublePressModifier__
-        KeyCode::COMMAND_L,
-        KeyCode::COMMAND_L, KeyCode::BACKQUOTE,ModifierFlag::CONTROL_L
+          KeyCode::COMMAND_L, KeyCode::COMMAND_L, 
+          KeyCode::BACKQUOTE,ModifierFlag::COMMAND_L
       </autogen>
       <autogen>__DoublePressModifier__
-        KeyCode::COMMAND_R,
-        KeyCode::COMMAND_R, KeyCode::BACKQUOTE,ModifierFlag::CONTROL_L
+          KeyCode::COMMAND_R, KeyCode::COMMAND_R,
+          KeyCode::BACKQUOTE,ModifierFlag::COMMAND_L
       </autogen>
     </item>
     <item>
