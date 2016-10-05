@@ -7,6 +7,14 @@
   <appdef>
     <appname>RSTUDIO</appname>
     <equal>org.rstudio.RStudio</equal>
+  </appdef>          
+  <appdef>
+    <appname>SLACK</appname>
+    <equal>com.tinyspeck.slackmacgap</equal>
+  </appdef>
+  <appdef>
+    <appname>POSTMAN</appname>
+    <equal>com.postmanlabs.mac</equal>
   </appdef>
   <item>
     <name>Richard's Own Mappings</name>
@@ -27,7 +35,7 @@
     <item>
       <name>iTerm Mappings</name>
       <identifier>rtessier.private.iterm</identifier>
-      <only>TERMINAL</only>
+      <only>TERMINAL, SLACK</only>
 
       <!--Cmd+] & Cmd+[ used to navigate windows -->
       <autogen>__KeyToKey__
@@ -51,7 +59,7 @@
     <item>
       <name>Developer Mappings</name>
       <identifier>rtessier.private.developer</identifier>
-      <only>VI, TERMINAL, RSTUDIO, EXCEL</only>
+      <only>VI, TERMINAL, RSTUDIO, EXCEL, POSTMAN</only>
 
       <!--Greater than and less than-->
       <autogen>__KeyToKey__
