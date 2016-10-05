@@ -263,7 +263,8 @@ nnoremap ,sc :SessionClose<CR>
 " Buffer navigation shortcuts, more friendly than using :
 nnoremap <Leader>bn :bn<CR>
 nnoremap <Leader>bp :bp<CR>
-nnoremap <Leader>bd :Bdelete<CR>
+nnoremap <Leader>bd :bdelete<CR>
+nnoremap <Leader>bw :bwipeout<CR>
 nnoremap <Leader>bm :bm<CR>
 
 " fzf based-mappings (buffers, maps, history, ...)
@@ -275,6 +276,36 @@ nnoremap <Leader>ff :Files<CR>
 " Tab helpers
 nnoremap <Leader>tn :tabnew<CR>
 nnoremap <Leader>tc :tabclose<CR>
+
+" Quickfix / error window helpers
+function! GetBufferList()
+  redir =>buflist
+  silent! ls!
+  redir END
+  return buflist
+endfunction
+
+function! ToggleList(bufname, pfx)
+  let buflist = GetBufferList()
+  for bufnum in map(filter(split(buflist, '\n'), 'v:val =~ "'.a:bufname.'"'), 'str2nr(matchstr(v:val, "\\d\\+"))')
+    if bufwinnr(bufnum) != -1
+      exec(a:pfx.'close')
+      return
+    endif
+  endfor
+  if a:pfx == 'l' && len(getloclist(0)) == 0
+      echohl ErrorMsg
+      echo "Location List is Empty."
+      return
+  endif
+  let winnr = winnr()
+  exec(a:pfx.'open')
+  if winnr() != winnr
+    wincmd p
+  endif
+endfunction
+
+nnoremap <silent><Leader>co :call ToggleList("Quickfix List", 'c')<CR>
 
 " json formatting through python for visual selection
 vnoremap <Leader>jt :!python -m json.tool<CR>
