@@ -66,6 +66,14 @@ endif
 " vim-airline options
 let g:airline#extensions#tabline#enabled = 1
 
+" ack.vim options
+" use ag
+let g:ackprg = 'ag --vimgrep --smart-case'
+cnoreabbrev ag Ack
+cnoreabbrev aG Ack
+cnoreabbrev Ag Ack
+cnoreabbrev AG Ack
+
 "Window size
 if has("gui_macvim")
     " set macvim specific stuff
@@ -203,13 +211,19 @@ nnoremap <C-J> <C-W>j
 nnoremap <C-K> <C-W>k
 
 " Simplenote (nvalt in Vim)
-let g:SimplenoteFiletype="markdown"
-let g:SimplenoteVertical=1
-noremap ,nl :Simplenote -l<CR>
-noremap ,nn :Simplenote -n<CR>
-noremap ,nu :Simplenote -u<CR>
-noremap ,nd :Simplenote -d<CR>
-noremap ,nt :Simplenote -o a0fcb908a3304f7d8563e22dcd21f6a4<CR>
+"let g:SimplenoteFiletype="markdown"
+"let g:SimplenoteVertical=1
+"noremap ,nl :Simplenote -l<CR>
+"noremap ,nn :Simplenote -n<CR>
+"noremap ,nu :Simplenote -u<CR>
+"noremap ,nd :Simplenote -d<CR>
+"noremap ,nt :Simplenote -o a0fcb908a3304f7d8563e22dcd21f6a4<CR>
+
+" Quickfix navigation
+noremap ,nn :silent cn<CR>
+noremap ,np :silent cp<CR>
+noremap ,no :silent copen<CR>
+noremap ,nc :silent cclose<CR>
 
 set backup                  " Backups are nice ...
 set undofile                " So is persistent undo ...
