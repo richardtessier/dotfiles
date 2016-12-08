@@ -25,7 +25,7 @@ export ZSH_THEME="flazz"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # plugins=(git zshmarks vi-mode)
-plugins=(vi-mode)
+plugins=(vi-mode fzf-z)
 fpath=(~/.zsh/completion $fpath)
 
 # TODO: Are there completions that I might use here? 
