@@ -52,7 +52,7 @@ let g:fzf_launcher = "in_a_new_term_function %s"
 syntax enable
 set background=dark
 colorscheme solarized
-call togglebg#map(",st") " Initialize ToggleBG mapping
+"call togglebg#map(",st") " Initialize ToggleBG mapping
 
 " Sessionman options
 set sessionoptions=blank,buffers,curdir,folds,tabpages,winsize
@@ -284,6 +284,8 @@ nnoremap <Leader>bm :bm<CR>
 " fzf based-mappings (buffers, maps, history, ...)
 nnoremap <Leader>fb :Buffers<CR>
 nnoremap <Leader>fh :History<CR>
+nnoremap <Leader>fc :History:<CR>
+nnoremap <Leader>fs :History/<CR>
 nnoremap <Leader>fm :Maps<CR>
 nnoremap <Leader>ff :Files<CR>
 
