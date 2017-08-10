@@ -141,6 +141,19 @@
       <identifier>rtessier.private.global.control2</identifier>
       <!-- remap pressing the left & right command twice to Control+ù, invoking Moom -->
       <autogen>__DoublePressModifier__
+          KeyCode::CONTROL_L, KeyCode::CONTROL_L, 
+          KeyCode::BACKQUOTE,ModifierFlag::CONTROL_L
+      </autogen>
+      <autogen>__DoublePressModifier__
+          KeyCode::CONTROL_R, KeyCode::CONTROL_R,
+          KeyCode::BACKQUOTE,ModifierFlag::CONTROL_L
+      </autogen>
+    </item>
+    <item>
+      <name>Alfred Clipboard activated Command + Command</name>
+      <identifier>rtessier.private.global.command2</identifier>
+      <!-- remap pressing the left & right command twice to Control+ù, invoking Moom -->
+      <autogen>__DoublePressModifier__
           KeyCode::COMMAND_L, KeyCode::COMMAND_L, 
           KeyCode::BACKQUOTE,ModifierFlag::COMMAND_L
       </autogen>
