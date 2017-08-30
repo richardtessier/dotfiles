@@ -1,0 +1,78 @@
+{
+    "editor.wordWrap": "on",
+    "workbench.iconTheme": null,
+    "extensions.ignoreRecommendations": false,
+    
+    "vim.disableAnnoyingNeovimMessage": true,
+    "vim.easymotion": true,
+    "vim.enableNeovim": true,
+    "vim.surround": true,
+    "vim.hlsearch": true,
+    "vim.insertModeKeyBindings": [
+        {
+            "before": ["j","j"],
+            "after": ["<Esc>"]
+        }
+    ],
+    "vim.leader": ",",
+    "vim.otherModesKeyBindingsNonRecursive": [
+        {
+            "before":["<C-t>"],
+            "after":[],
+            "commands": [
+                {
+                    "command": "workbench.action.openPreviousRecentlyUsedEditorInGroup"
+                }
+            ]
+        },
+        {
+            "before":["<leader>", "/"],
+            "after":[],
+            "commands": [
+                {
+                    "command": ":nohl"
+                }
+            ]
+        },
+        {
+            "before": ["<leader>","a"],
+            "after": ["d", "d"]
+        },
+        {
+            "before":["<leader>", "b", "e"],
+            "after":[],
+            "commands": [
+                {
+                    "command": "workbench.action.quickOpen"
+                }
+            ]
+        },
+        {
+            "before":["<leader>", "b", "n"],
+            "after":[],
+            "commands": [
+                {
+                    "command": "workbench.action.nextEditor"
+                }
+            ]
+        },
+        {
+            "before":["<leader>", "b", "p"],
+            "after":[],
+            "commands": [
+                {
+                    "command": "workbench.action.previousEditor"
+                }
+            ]
+        },
+        {
+            "before":["<leader>", "b", "d"],
+            "after":[],
+            "commands": [
+                {
+                    "command": "workbench.action.closeActiveEditor"
+                }
+            ]
+        }
+    ]
+}

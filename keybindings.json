@@ -1,0 +1,20 @@
+// Place your key bindings in this file to overwrite the defaults
+[
+{
+    "key": "cmd+k =",
+    "command": "workbench.action.evenEditorWidths",
+    "when": "editorFocus"
+},{
+    "key": "cmd+k -",
+    "command": "workbench.action.maximizeEditor",
+    "when": "editorFocus"
+},
+{
+    "key": "ctrl+[Period]",
+    "command": "workbench.action.openRecent"
+},
+{
+    "key": "ctrl+r",
+    "command": "-workbench.action.openRecent"
+}
+]
