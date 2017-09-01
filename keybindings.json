@@ -10,7 +10,7 @@
     "when": "editorFocus"
 },
 {
-    "key": "ctrl+[Period]",
+    "key": "cmd+[Period]",
     "command": "workbench.action.openRecent"
 },
 {
