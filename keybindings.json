@@ -1,33 +1,43 @@
 // Place your key bindings in this file to overwrite the defaults
 [
-{
-    "key": "cmd+k =",
-    "command": "workbench.action.evenEditorWidths",
-    "when": "editorFocus"
-},{
-    "key": "cmd+k -",
-    "command": "workbench.action.maximizeEditor",
-    "when": "editorFocus"
-},
-{
-    "key": "cmd+[Period]",
-    "command": "workbench.action.openRecent"
-},
-{
-    "key": "ctrl+r",
-    "command": "-workbench.action.openRecent"
-},
-{
-    "key": "shift+cmd+g",
-    "command": "workbench.view.scm"
-},
-{
-    "key": "ctrl+shift+g",
-    "command": "-workbench.view.scm"
-},
-{
-    "key": "shift+cmd+g",
-    "command": "-editor.action.previousMatchFindAction",
-    "when": "editorFocus"
-}
+    {
+        "key": "cmd+k =",
+        "command": "workbench.action.evenEditorWidths",
+        "when": "editorFocus"
+    },
+    {
+        "key": "cmd+k -",
+        "command": "workbench.action.maximizeEditor",
+        "when": "editorFocus"
+    },
+    {
+        "key": "cmd+[Period]",
+        "command": "workbench.action.openRecent"
+    },
+    {
+        "key": "ctrl+r",
+        "command": "-workbench.action.openRecent"
+    },
+    {
+        "key": "shift+cmd+g",
+        "command": "workbench.view.scm"
+    },
+    {
+        "key": "ctrl+shift+g",
+        "command": "-workbench.view.scm"
+    },
+    {
+        "key": "shift+cmd+g",
+        "command": "-editor.action.previousMatchFindAction",
+        "when": "editorFocus"
+    },
+    {
+        "key": "ctrl+[Period]",
+        "command": "workbench.action.compareEditor.nextChange"
+        "when": "isInDiffEditor"
+    },
+    {
+        "key": "ctrl+[Comma]",
+        "command": "workbench.action.compareEditor.previousChange"
+    }
 ]
