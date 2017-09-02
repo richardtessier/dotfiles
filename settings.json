@@ -19,6 +19,15 @@
     "vim.leader": ",",
     "vim.otherModesKeyBindingsNonRecursive": [
         {
+            "before": ["=","="],
+            "after": [""],
+            "commands": [
+                {
+                    "command": "editor.action.reindentlines"
+                }
+            ]
+        },
+        {
             "before":["<C-t>"],
             "after":[],
             "commands": [
