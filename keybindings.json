@@ -33,11 +33,12 @@
     },
     {
         "key": "ctrl+[Period]",
-        "command": "workbench.action.compareEditor.nextChange"
-        "when": "isInDiffEditor"
+        "command": "workbench.action.compareEditor.nextChange",
+        "when": "textCompareEditorVisible"
     },
     {
         "key": "ctrl+[Comma]",
-        "command": "workbench.action.compareEditor.previousChange"
+        "command": "workbench.action.compareEditor.previousChange",
+        "when": "textCompareEditorVisible"
     }
 ]
