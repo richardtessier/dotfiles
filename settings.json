@@ -19,6 +19,18 @@
     "vim.leader": ",",
     "vim.otherModesKeyBindingsNonRecursive": [
         {
+            "before": ["<leader>","P"],
+            "after": ["\"", "+", "P"]
+        },
+        {
+            "before": ["<leader>","p"],
+            "after": ["\"", "+", "p"]
+        },
+        {
+            "before": ["<leader>","y"],
+            "after": ["\"", "+", "y"]
+        },
+        {
             "before": ["=","="],
             "after": [""],
             "commands": [
