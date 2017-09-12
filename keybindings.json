@@ -48,5 +48,9 @@
     {
         "key": "ctrl+shift+[Slash]",
         "command": "workbench.action.quickOpenTerm"
+    },
+    {
+        "key": "cmd+[Quote]",
+        "command": "workbench.action.toggleMaximizedPanel"
     }
 ]
