@@ -40,5 +40,13 @@
         "key": "ctrl+[Comma]",
         "command": "workbench.action.compareEditor.previousChange",
         "when": "textCompareEditorVisible"
+    },
+    {
+        "key": "ctrl+[Slash]",
+        "command": "workbench.action.terminal.toggleTerminal"
+    },
+    {
+        "key": "ctrl+shift+[Slash]",
+        "command": "workbench.action.quickOpenTerm"
     }
 ]
