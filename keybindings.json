@@ -52,5 +52,10 @@
     {
         "key": "cmd+[Quote]",
         "command": "workbench.action.toggleMaximizedPanel"
+    },
+    {
+        "key": "alt+[IntlBackslash]",
+        "command": "-gitlens.showCommitSearch",
+        "when": "gitlens:enabled"
     }
 ]
