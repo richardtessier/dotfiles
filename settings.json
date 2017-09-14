@@ -30,15 +30,15 @@
             "before": ["<leader>","y"],
             "after": ["\"", "+", "y"]
         },
-        {
-            "before": ["=","="],
-            "after": [""],
-            "commands": [
-                {
-                    "command": "editor.action.reindentlines"
-                }
-            ]
-        },
+        // {
+        //     "before": ["=","="],
+        //     "after": [""],
+        //     "commands": [
+        //         {
+        //             "command": "editor.action.reindentlines"
+        //         }
+        //     ]
+        // },
         {
             "before":["<C-t>"],
             "after":[],
@@ -94,6 +94,24 @@
             "commands": [
                 {
                     "command": "workbench.action.closeActiveEditor"
+                }
+            ]
+        },
+        {
+            "before":["<leader>", "c", " "],
+            "after":[],
+            "commands": [
+                {
+                    "command": "editor.action.commentLine"
+                }
+            ]
+        },
+        {
+            "before":["<leader>", "c", "b"],
+            "after":[],
+            "commands": [
+                {
+                    "command": "editor.action.blockComment"
                 }
             ]
         }
