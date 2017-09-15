@@ -132,7 +132,7 @@ fzf-cd-widget-filtered() {
   zle reset-prompt
 }
 zle     -N   fzf-cd-widget-filtered
-bindkey '^K' fzf-cd-widget-filtered
+bindkey '^B' fzf-cd-widget-filtered
 
 # Go Development
 export GOPATH=$HOME/go
