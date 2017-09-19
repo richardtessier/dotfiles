@@ -42,10 +42,6 @@
         "when": "textCompareEditorVisible"
     },
     {
-        "key": "ctrl+[Slash]",
-        "command": "workbench.action.terminal.toggleTerminal"
-    },
-    {
         "key": "ctrl+shift+[Slash]",
         "command": "workbench.action.quickOpenTerm"
     },
@@ -57,5 +53,9 @@
         "key": "alt+[IntlBackslash]",
         "command": "-gitlens.showCommitSearch",
         "when": "gitlens:enabled"
+    },
+    {
+        "key": "ctrl+[Slash]",
+        "command": "workbench.action.terminal.focus"
     }
 ]
