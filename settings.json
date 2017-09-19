@@ -1,6 +1,6 @@
 {
     "editor.wordWrap": "on",
-    "workbench.iconTheme": null,
+    "workbench.iconTheme": "material-icon-theme",
     "extensions.ignoreRecommendations": false,
     "workbench.colorTheme": "Solarized Dark",
     "git.enableSmartCommit": true,
