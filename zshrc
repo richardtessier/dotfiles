@@ -28,7 +28,7 @@ export ZSH_THEME="flazz"
 plugins=(vi-mode fzf-z)
 fpath=(~/.zsh/completion $fpath)
 
-# TODO: Are there completions that I might use here? 
+# TODO: Are there completions that I might use here?
 #plugins+=(zsh-completions)
 #autoload -U compinit && compinit
 
@@ -91,7 +91,7 @@ bindkey -M viins "^F" history-incremental-search-forward
 alias lt='ls -lt'
 alias lta='ls -ltA'
 
-lth() { 
+lth() {
   local headargs lsargs
 
   # $1=Numeric, head -n $1 and $2 is path
@@ -107,14 +107,14 @@ lth() {
     headargs=""
   fi
 
-  #eval "$lscmd" 
+  #eval "$lscmd"
   #lsargs="dev2/bmc/Queries_2015-12-07/*.zip"
   #echo "${=lsargs}"
-  ls -lt ${=lsargs} | head ${headargs} 
+  ls -lt ${=lsargs} | head ${headargs}
 }
 
-ff() { 
-  find . -not \( -path "*/Library/*" -o -path "*/Applications/*" -o -path "*/.Trash/*" -o -path "*Microsoft Lync History/*" -prune \) -name $* 
+ff() {
+  find . -not \( -path "*/Library/*" -o -path "*/Applications/*" -o -path "*/.Trash/*" -o -path "*Microsoft Lync History/*" -prune \) -name $*
 }
 
 alias showfiles='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app'
@@ -122,7 +122,6 @@ alias hidefiles='defaults write com.apple.finder AppleShowAllFiles NO; killall F
 # Fuzzy file finder
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_OPTS="--extended --cycle"
-export FZF_CTRL_R_OPTS="--sort --tiebreak=begin,length,index"
 
 # cd into the selected directory - with filter for large directories of little interest
 fzf-cd-widget-filtered() {
