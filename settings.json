@@ -117,5 +117,14 @@
         }
     ],
     "editor.minimap.enabled": false,
-    "workbench.startupEditor": "newUntitledFile"
+    "workbench.startupEditor": "newUntitledFile",
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "**/*.js.map": true
+    },
+    "python.pythonPath": "python2"
 }
