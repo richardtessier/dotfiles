@@ -135,7 +135,7 @@ bindkey '^B' fzf-cd-widget-filtered
 
 # Go Development
 export GOPATH=$HOME/go
-export PATH=$PATH:$GOPATH/bin
+export PATH="/usr/local/opt/python/libexec/bin:$PATH:$GOPATH/bin"
 
 # Terminal Columns
 export COLUMNS
