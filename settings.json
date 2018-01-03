@@ -126,5 +126,12 @@
         "**/.DS_Store": true,
         "**/*.js.map": true
     },
-    "python.pythonPath": "python2"
+    "python.pythonPath": "python2",
+    "window.zoomLevel": 0,
+    "C_Cpp.clang_format_fallbackStyle": "Chromium",
+    "git.confirmSync": false,
+    "editor.renderControlCharacters": true,
+    "workbench.commandPalette.preserveInput": true,
+    "workbench.panel.location": "bottom",
+    "workbench.editor.enablePreview": false
 }

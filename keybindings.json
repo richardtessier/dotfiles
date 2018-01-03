@@ -18,19 +18,10 @@
         "key": "ctrl+r",
         "command": "-workbench.action.openRecent"
     },
-    {
-        "key": "shift+cmd+g",
-        "command": "workbench.view.scm"
-    },
-    {
-        "key": "ctrl+shift+g",
-        "command": "-workbench.view.scm"
-    },
-    {
-        "key": "shift+cmd+g",
-        "command": "-editor.action.previousMatchFindAction",
-        "when": "editorFocus"
-    },
+    // {
+    //     "key": "shift+cmd+g",
+    //     "command": "workbench.view.scm"
+    // },
     {
         "key": "ctrl+[Period]",
         "command": "workbench.action.compareEditor.nextChange",
@@ -57,5 +48,25 @@
     {
         "key": "ctrl+[Slash]",
         "command": "workbench.action.terminal.focus"
+    },
+    {
+        "key": "shift+alt+[Comma]",
+        "command": "gitlens.diffWithNext",
+        "when": "editorTextFocus && gitlens:isTracked"
+    },
+    {
+        "key": "alt+[Period]",
+        "command": "-gitlens.diffWithNext",
+        "when": "editorTextFocus && gitlens:isTracked"
+    },
+    {
+        "key": "shift+alt+[Period]",
+        "command": "gitlens.diffWithPrevious",
+        "when": "editorTextFocus && gitlens:isTracked"
+    },
+    {
+        "key": "alt+[Comma]",
+        "command": "-gitlens.diffWithPrevious",
+        "when": "editorTextFocus && gitlens:isTracked"
     }
 ]
