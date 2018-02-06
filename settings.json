@@ -133,5 +133,6 @@
     "editor.renderControlCharacters": true,
     "workbench.commandPalette.preserveInput": true,
     "workbench.panel.location": "bottom",
-    "workbench.editor.enablePreview": false
+    "workbench.editor.enablePreview": false,
+    "git.autofetch": true
 }
