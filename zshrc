@@ -140,7 +140,7 @@ export PATH="/usr/local/opt/python/libexec/bin:$PATH:$GOPATH/bin:$HOME/anaconda3
 # Terminal Columns
 export COLUMNS
 
-# Make less behave more inteligently and leave output on screen!
+# Make less behave more intelligently and leave output on screen!
 export LESS=-iXFR
 
 # GitHub helpers, alias git->hub
