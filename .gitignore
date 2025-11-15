@@ -1,3 +1,17 @@
+# Legacy
 private.vim
 passwords.txt
 bkp_othermacbook
+
+# Fish shell - machine-specific state
+fish/.config/fish/fish_variables
+
+# Neovim/LazyVim - generated files
+nvim/.config/nvim/lazy-lock.json
+nvim/.config/nvim/.lazy/
+
+# macOS
+.DS_Store
+
+# Local overrides
+*.local
