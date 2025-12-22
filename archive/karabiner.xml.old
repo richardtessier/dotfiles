@@ -1,0 +1,180 @@
+<?xml version="1.0"?>
+<root>
+  <appdef>
+    <appname>MACVIM</appname>
+    <equal>org.vim.MacVim</equal>
+  </appdef>
+  <appdef>
+    <appname>RSTUDIO</appname>
+    <equal>org.rstudio.RStudio</equal>
+  </appdef>          
+  <appdef>
+    <appname>SLACK</appname>
+    <equal>com.tinyspeck.slackmacgap</equal>
+  </appdef>
+  <appdef>
+    <appname>POSTMAN</appname>
+    <equal>com.postmanlabs.mac</equal>
+  </appdef>
+  <item>
+    <name>Richard's Own Mappings</name>
+    <item>
+      <name>Chrome Back/Forward History (CMD+^, CMD+ç)</name>
+      <identifier>rtessier.private.global.commandbracket</identifier>
+      <only>GOOGLE_CHROME</only>
+      <autogen>__KeyToKey__
+        KeyCode::BRACKET_RIGHT,MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND | ModifierFlag::NONE,
+        KeyCode::KEY_0, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L
+      </autogen>   
+      <autogen>__KeyToKey__
+        KeyCode::BRACKET_LEFT,MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND | ModifierFlag::NONE,
+        KeyCode::KEY_9, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L
+      </autogen>
+    </item>
+
+    <item>
+      <name>iTerm Mappings</name>
+      <identifier>rtessier.private.iterm</identifier>
+      <only>TERMINAL, SLACK</only>
+
+      <!--Cmd+] & Cmd+[ used to navigate windows -->
+      <autogen>__KeyToKey__
+        KeyCode::BRACKET_RIGHT,MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND | ModifierFlag::NONE,
+        KeyCode::KEY_0, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L
+      </autogen>   
+      <autogen>__KeyToKey__
+        KeyCode::BRACKET_LEFT,MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND | ModifierFlag::NONE,
+        KeyCode::KEY_9, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L
+      </autogen>
+      <autogen>__KeyToKey__
+        KeyCode::BRACKET_RIGHT,MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND | MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT | ModifierFlag::NONE,
+        KeyCode::KEY_0, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L
+      </autogen>   
+      <autogen>__KeyToKey__
+        KeyCode::BRACKET_LEFT,MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND | MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT | ModifierFlag::NONE,
+        KeyCode::KEY_9, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L
+      </autogen>
+    </item>
+
+    <item>
+      <name>Developer Mappings</name>
+      <identifier>rtessier.private.developer</identifier>
+      <only>VI, TERMINAL, RSTUDIO, EXCEL, POSTMAN</only>
+
+      <!--Greater than and less than-->
+      <autogen>__KeyToKey__
+        KeyCode::QUOTE, ModifierFlag::NONE, 
+        KeyCode::COMMA, ModifierFlag::OPTION_L
+      </autogen>
+      <autogen>__KeyToKey__
+        KeyCode::BACKSLASH, ModifierFlag::NONE, 
+        KeyCode::DOT, ModifierFlag::OPTION_L
+      </autogen>
+
+      <!--Brackets and curly braces-->
+      <autogen>__KeyToKey__
+        KeyCode::BRACKET_RIGHT, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL,
+        KeyCode::BRACKET_RIGHT, ModifierFlag::CONTROL_R
+      </autogen>
+      <autogen>__KeyToKey__
+        KeyCode::BRACKET_RIGHT, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT,
+        KeyCode::KEY_8, ModifierFlag::OPTION_L
+      </autogen>
+      <autogen>__KeyToKey__
+        KeyCode::BRACKET_LEFT, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT,
+        KeyCode::KEY_7, ModifierFlag::OPTION_L
+      </autogen>
+      <autogen>__KeyToKey__
+        KeyCode::BRACKET_LEFT, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION,
+        KeyCode::BRACKET_LEFT,KeyCode::SPACE
+      </autogen>
+      <autogen>__KeyToKey__
+        KeyCode::BRACKET_RIGHT, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION,
+        KeyCode::BRACKET_RIGHT,ModifierFlag::OPTION_L
+      </autogen>
+
+      <!--Shift+è=^, Shift+à=~ (required since we are remapping the ^ and ç keys below) -->
+      <autogen>__KeyToKey__
+        KeyCode::QUOTE, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT | ModifierFlag::NONE,
+        KeyCode::BRACKET_LEFT, KeyCode::SPACE
+      </autogen>
+      <autogen>__KeyToKey__
+        KeyCode::BACKSLASH,MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT | ModifierFlag::NONE,
+        KeyCode::BRACKET_RIGHT, ModifierFlag::OPTION_L
+      </autogen>
+      <autogen>__KeyToKey__ 
+        KeyCode::SLASH, 
+        KeyCode::BRACKET_LEFT,ModifierFlag::OPTION_L
+      </autogen>
+
+      <!--Backtick-->
+      <autogen>__KeyToKey__
+        KeyCode::SLASH,ModifierFlag::NONE,
+        KeyCode::BRACKET_LEFT,ModifierFlag::OPTION_L,KeyCode::SPACE
+      </autogen>
+
+      <!--The direct keys have to be last since they would screw up the mappings with modifiers above-->
+      <autogen>__KeyToKey__
+        KeyCode::BRACKET_LEFT,
+        KeyCode::KEY_9, ModifierFlag::OPTION_L
+      </autogen>
+      <autogen>__KeyToKey__
+        KeyCode::BRACKET_RIGHT,
+        KeyCode::KEY_0, ModifierFlag::OPTION_L
+      </autogen>
+    </item>
+    <item>
+      <name>Switch Desktop via Control-Left/Right Arrows</name>
+      <identifier>rtessier.private.global.switchdesktop</identifier>
+      <not>POWERPOINT</not>
+      <autogen>__KeyToKey__
+        KeyCode::CURSOR_LEFT, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL,
+        KeyCode::QUOTE, ModifierFlag::CONTROL_R
+      </autogen>
+      <autogen>__KeyToKey__
+        KeyCode::CURSOR_RIGHT, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL,
+        KeyCode::BACKSLASH, ModifierFlag::CONTROL_R
+      </autogen>
+    </item>
+    <item>
+      <name>Moom activated Control + Control</name>
+      <identifier>rtessier.private.global.control2</identifier>
+      <!-- remap pressing the left & right command twice to Control+ù, invoking Moom -->
+      <autogen>__DoublePressModifier__
+          KeyCode::CONTROL_L, KeyCode::CONTROL_L, 
+          KeyCode::BACKQUOTE,ModifierFlag::CONTROL_L
+      </autogen>
+      <autogen>__DoublePressModifier__
+          KeyCode::CONTROL_R, KeyCode::CONTROL_R,
+          KeyCode::BACKQUOTE,ModifierFlag::CONTROL_L
+      </autogen>
+    </item>
+    <item>
+      <name>Alfred Clipboard activated Command + Command</name>
+      <identifier>rtessier.private.global.command2</identifier>
+      <!-- remap pressing the left & right command twice to Control+ù, invoking Moom -->
+      <autogen>__DoublePressModifier__
+          KeyCode::COMMAND_L, KeyCode::COMMAND_L, 
+          KeyCode::BACKQUOTE,ModifierFlag::COMMAND_L
+      </autogen>
+      <autogen>__DoublePressModifier__
+          KeyCode::COMMAND_R, KeyCode::COMMAND_R,
+          KeyCode::BACKQUOTE,ModifierFlag::COMMAND_L
+      </autogen>
+    </item>
+    <item>
+      <name>RStudio Developer</name>
+      <identifier>rtessier.private.rstudio</identifier>
+      <only>RSTUDIO</only>
+
+      <!-- %>% facilitating mappign to CMD+.-->
+      <autogen>__KeyToKey__
+        KeyCode::DOT,VK_COMMAND,
+        KeyCode::KEY_5, ModifierFlag::SHIFT_L,
+        KeyCode::DOT, ModifierFlag::OPTION_L,
+        KeyCode::KEY_5,ModifierFlag::SHIFT_L,
+        KeyCode::SPACE
+      </autogen>
+    </item>
+  </item>
+</root>

@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cp:*)",
+      "Bash(awk 'NR==1057 {while(getline line < \"\"/tmp/spacing-css.txt\"\") print line} {print}' \"Implementation guide - spacing review.html\")",
+      "Bash(mv:*)",
+      "Bash(awk 'NR==2388 {while(getline line < \"\"/tmp/spacing-toggle.txt\"\") print line} {print}' \"Implementation guide - spacing review.html\")",
+      "Bash(awk:*)"
+    ],
+    "defaultMode": "default"
+  },
+  "enabledPlugins": {
+    "browser-automation@browser-tools": true
+  },
+  "alwaysThinkingEnabled": false
+}

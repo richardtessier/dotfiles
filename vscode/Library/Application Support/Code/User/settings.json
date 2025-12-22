@@ -1,0 +1,138 @@
+{
+    "editor.wordWrap": "on",
+    "workbench.iconTheme": "material-icon-theme",
+    "extensions.ignoreRecommendations": false,
+    "workbench.colorTheme": "Solarized Dark",
+    "git.enableSmartCommit": true,
+
+    "vim.disableAnnoyingNeovimMessage": true,
+    "vim.easymotion": true,
+    "vim.enableNeovim": true,
+    "vim.surround": true,
+    "vim.hlsearch": true,
+    "vim.insertModeKeyBindings": [
+        {
+            "before": ["j","j"],
+            "after": ["<Esc>"]
+        }
+    ],
+    "vim.leader": ",",
+    "vim.otherModesKeyBindingsNonRecursive": [
+        {
+            "before": ["<leader>","P"],
+            "after": ["\"", "+", "P"]
+        },
+        {
+            "before": ["<leader>","p"],
+            "after": ["\"", "+", "p"]
+        },
+        {
+            "before": ["<leader>","y"],
+            "after": ["\"", "+", "y"]
+        },
+        // {
+        //     "before": ["=","="],
+        //     "after": [""],
+        //     "commands": [
+        //         {
+        //             "command": "editor.action.reindentlines"
+        //         }
+        //     ]
+        // },
+        {
+            "before":["<C-t>"],
+            "after":[],
+            "commands": [
+                {
+                    "command": "workbench.action.openPreviousRecentlyUsedEditorInGroup"
+                }
+            ]
+        },
+        {
+            "before":["<leader>", "/"],
+            "after":[],
+            "commands": [
+                {
+                    "command": ":nohl"
+                }
+            ]
+        },
+        {
+            "before": ["<leader>","a"],
+            "after": ["d", "d"]
+        },
+        {
+            "before":["<leader>", "b", "e"],
+            "after":[],
+            "commands": [
+                {
+                    "command": "workbench.action.quickOpen"
+                }
+            ]
+        },
+        {
+            "before":["<leader>", "b", "n"],
+            "after":[],
+            "commands": [
+                {
+                    "command": "workbench.action.nextEditor"
+                }
+            ]
+        },
+        {
+            "before":["<leader>", "b", "p"],
+            "after":[],
+            "commands": [
+                {
+                    "command": "workbench.action.previousEditor"
+                }
+            ]
+        },
+        {
+            "before":["<leader>", "b", "d"],
+            "after":[],
+            "commands": [
+                {
+                    "command": "workbench.action.closeActiveEditor"
+                }
+            ]
+        },
+        {
+            "before":["<leader>", "c", " "],
+            "after":[],
+            "commands": [
+                {
+                    "command": "editor.action.commentLine"
+                }
+            ]
+        },
+        {
+            "before":["<leader>", "c", "b"],
+            "after":[],
+            "commands": [
+                {
+                    "command": "editor.action.blockComment"
+                }
+            ]
+        }
+    ],
+    "editor.minimap.enabled": false,
+    "workbench.startupEditor": "newUntitledFile",
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "**/*.js.map": true
+    },
+    "python.pythonPath": "python2",
+    "window.zoomLevel": 0,
+    "C_Cpp.clang_format_fallbackStyle": "Chromium",
+    "git.confirmSync": false,
+    "editor.renderControlCharacters": true,
+    "workbench.commandPalette.preserveInput": true,
+    "workbench.panel.location": "bottom",
+    "workbench.editor.enablePreview": false,
+    "git.autofetch": true
+}

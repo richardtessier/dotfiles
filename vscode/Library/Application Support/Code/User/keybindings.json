@@ -1,0 +1,72 @@
+// Place your key bindings in this file to overwrite the defaults
+[
+    {
+        "key": "cmd+k =",
+        "command": "workbench.action.evenEditorWidths",
+        "when": "editorFocus"
+    },
+    {
+        "key": "cmd+k -",
+        "command": "workbench.action.maximizeEditor",
+        "when": "editorFocus"
+    },
+    {
+        "key": "cmd+[Period]",
+        "command": "workbench.action.openRecent"
+    },
+    {
+        "key": "ctrl+r",
+        "command": "-workbench.action.openRecent"
+    },
+    // {
+    //     "key": "shift+cmd+g",
+    //     "command": "workbench.view.scm"
+    // },
+    {
+        "key": "ctrl+[Period]",
+        "command": "workbench.action.compareEditor.nextChange",
+        "when": "textCompareEditorVisible"
+    },
+    {
+        "key": "ctrl+[Comma]",
+        "command": "workbench.action.compareEditor.previousChange",
+        "when": "textCompareEditorVisible"
+    },
+    {
+        "key": "ctrl+shift+[Slash]",
+        "command": "workbench.action.quickOpenTerm"
+    },
+    {
+        "key": "cmd+[Quote]",
+        "command": "workbench.action.toggleMaximizedPanel"
+    },
+    {
+        "key": "alt+[IntlBackslash]",
+        "command": "-gitlens.showCommitSearch",
+        "when": "gitlens:enabled"
+    },
+    {
+        "key": "ctrl+[Slash]",
+        "command": "workbench.action.terminal.focus"
+    },
+    {
+        "key": "shift+alt+[Comma]",
+        "command": "gitlens.diffWithNext",
+        "when": "editorTextFocus && gitlens:isTracked"
+    },
+    {
+        "key": "alt+[Period]",
+        "command": "-gitlens.diffWithNext",
+        "when": "editorTextFocus && gitlens:isTracked"
+    },
+    {
+        "key": "shift+alt+[Period]",
+        "command": "gitlens.diffWithPrevious",
+        "when": "editorTextFocus && gitlens:isTracked"
+    },
+    {
+        "key": "alt+[Comma]",
+        "command": "-gitlens.diffWithPrevious",
+        "when": "editorTextFocus && gitlens:isTracked"
+    }
+]

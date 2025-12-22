@@ -1,0 +1,11 @@
+[credential "https://github.com"]
+	helper =
+	helper = !/opt/homebrew/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper =
+	helper = !/opt/homebrew/bin/gh auth git-credential
+
+# Include local config for user-specific settings (not tracked in git)
+# Create ~/.gitconfig.local with your personal [user] section
+[include]
+	path = ~/.gitconfig.local
