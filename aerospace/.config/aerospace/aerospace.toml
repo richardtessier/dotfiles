@@ -114,6 +114,10 @@ if.app-id = 'ai.perplexity.mac'
 run = ["move-node-to-workspace G" ]
 
 [[on-window-detected]]
+if.app-id = 'md.obsidian'
+run = ["move-node-to-workspace O" ]
+
+[[on-window-detected]]
 if.app-id = 'com.microsoft.PowerPoint'
 run = ["move-node-to-workspace P" ]
 
@@ -289,7 +293,7 @@ alt-g = 'workspace G --auto-back-and-forth'
 # alt-i = 'workspace I'
 # alt-m = 'workspace M'
 # alt-n = 'workspace N'
-# alt-o = 'workspace O'
+alt-o = 'workspace O --auto-back-and-forth'
 alt-p = 'workspace P --auto-back-and-forth'
 # alt-q = 'workspace Q'
 # alt-r = 'workspace R'
@@ -323,7 +327,7 @@ alt-shift-g = 'move-node-to-workspace --focus-follows-window G'
 # alt-shift-i = 'move-node-to-workspace I'
 # alt-shift-m = 'move-node-to-workspace M'
 # alt-shift-n = 'move-node-to-workspace N'
-# alt-shift-o = 'move-node-to-workspace O'
+alt-shift-o = 'move-node-to-workspace --focus-follows-window O'
 alt-shift-p = 'move-node-to-workspace P'
 # alt-shift-q = 'move-node-to-workspace Q'
 # alt-shift-r = 'move-node-to-workspace R'

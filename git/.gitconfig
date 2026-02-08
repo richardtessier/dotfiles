@@ -9,3 +9,5 @@
 # Create ~/.gitconfig.local with your personal [user] section
 [include]
 	path = ~/.gitconfig.local
+[url "https://github.com/"]
+	insteadOf = git@github.com:
