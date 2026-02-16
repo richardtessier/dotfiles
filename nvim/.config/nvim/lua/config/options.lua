@@ -1,5 +1,8 @@
 -- Options are automatically loaded before lazy.nvim startup
 -- Default options that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/options.lua
+-- Ensure termguicolors is always set, including for vimdiff
+-- vim.opt.termguicolors = true
+
 -- Add any additional options here
 vim.g.mapleader = ","
 -- vim.opt.laststatus = 2
