@@ -81,7 +81,7 @@ Z = '^built-in.*display$'        # Case insensitive regex match
 
 # My custom config section (richardtessier)
 [key-mapping.key-notation-to-key-code]
-# unicorn = 'ù' # Would be nice to be able to use CSA keys for mappings
+# unicorn = "ù" # Would be nice to be able to use CSA keys for mappings
 
 # Apps to worksapce assignment
 [[on-window-detected]]
@@ -256,7 +256,9 @@ alt-h = 'focus left'
 alt-j = 'focus down'
 alt-k = 'focus up'
 alt-l = 'focus right'
-alt-q = 'layout floating tiling'
+# alt-q = 'layout floating tiling'
+# alt-q = 'exec-and-forget $HOME/dotfiles/scripts/aerospace_toggle_center.sh'
+alt-q = 'exec-and-forget $HOME/dotfiles/scripts/aerospace_toggle_center_moom.sh'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move
 alt-shift-h = 'move left'
