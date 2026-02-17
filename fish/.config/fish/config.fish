@@ -8,6 +8,7 @@ if status is-interactive
     if test "$TERM_PROGRAM" != WarpTerminal
         source ~/.iterm2_shell_integration.fish
     end
+    set -g fzf_fd_opts --hidden --exclude=.git
     fzf_configure_bindings --directory=\cf
     test -n \cz && bind --mode insert \cz _fzf_search_z
 end
