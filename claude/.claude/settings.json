@@ -56,8 +56,13 @@
     "ask": [],
     "defaultMode": "default"
   },
+  "statusLine": {
+    "type": "command",
+    "command": "/Users/richardtessier/.claude/statusline.sh"
+  },
   "enabledPlugins": {
     "browser-automation@browser-tools": true
   },
+  "model": "opus",
   "alwaysThinkingEnabled": false
 }

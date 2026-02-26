@@ -376,6 +376,7 @@ equal = 'resize smart +100'
 
 f = ['layout floating tiling', 'mode main'] # Toggle between floating and tiling layout
 r = ['flatten-workspace-tree', 'mode main'] # reset layout
+t = ['exec-and-forget bash -c "$HOME/dotfiles/scripts/aerospace_tile_all.sh"', 'mode main'] # Tile all floating windows
 # n = 'move-node-to-monitor --wrap-around --focus-follows-window next'
 # p = 'move-node-to-monitor --wrap-around --focus-follows-window prev'
 # shift-n = 'move-node-to-workspace --wrap-around --focus-follows-window next'
