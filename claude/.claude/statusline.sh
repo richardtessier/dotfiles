@@ -10,8 +10,10 @@ case "$model" in
   "Claude 3.5 Haiku") model="Haiku 3.5" ;;
   "Claude Opus 4") model="Opus 4" ;;
   "Claude Opus 4.5") model="Opus 4.5" ;;
+  "Claude Opus 4.6") model="Opus 4.6" ;;
   "Claude Sonnet 4") model="Sonnet 4" ;;
   "Claude Sonnet 4.5") model="Sonnet 4.5" ;;
+  "Claude Sonnet 4.6") model="Sonnet 4.6" ;;
 esac
 
 # Extract context usage percentage
