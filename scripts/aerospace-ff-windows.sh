@@ -12,10 +12,17 @@ ellipsis=$'\xe2\x80\xa6'
 
 truncate() {
     local str="$1" max="$2"
-    if (( ${#str} > max )); then
-        printf '%-*s' "$max" "${str:0:$((max-1))}${ellipsis}"
+    local charlen=${#str}
+    local bytelen=$(LC_ALL=C; echo "${#str}")
+    local extra=$(( bytelen - charlen ))
+
+    if (( charlen > max )); then
+        local truncated="${str:0:$((max-1))}"
+        local tbytelen=$(LC_ALL=C; echo "${#truncated}")
+        local textra=$(( tbytelen - (max - 1) ))
+        printf '%-*s' "$(( max + textra ))" "${truncated}${ellipsis}"
     else
-        printf '%-*s' "$max" "$str"
+        printf '%-*s' "$(( max + extra ))" "$str"
     fi
 }
 
