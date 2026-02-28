@@ -341,8 +341,8 @@ alt-shift-z = 'move-node-to-workspace --focus-follows-window Z'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
 # alt-tab = 'workspace-back-and-forth'
-alt-tab = 'focus-back-and-forth'
-alt-q = 'workspace-back-and-forth'
+alt-q = 'focus-back-and-forth'
+alt-w = 'workspace-back-and-forth'
 alt-a = 'exec-and-forget $HOME/dotfiles/scripts/aerospace_toggle_center_moom.sh'
 # alt-q = 'layout floating tiling'
 # alt-q = 'exec-and-forget $HOME/dotfiles/scripts/aerospace_toggle_center.sh'
