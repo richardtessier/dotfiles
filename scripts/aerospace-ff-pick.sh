@@ -12,6 +12,12 @@ selected=$("$SCRIPT_DIR/aerospace-ff-windows.sh" all | fzf \
   --nth=2.. \
   --prompt='All > ' \
   --header='/: cycle filter | ctrl-s: toggle sort | tab/esc: exit' \
+  --bind="tab:transform:bash -c '
+        if [[ \$FZF_PROMPT == \"All > \" ]]; then
+            echo \"change-prompt(iTerm2 > )+reload($SCRIPT_DIR/aerospace-ff-windows.sh iterm2)\";
+        else
+            echo \"change-prompt(All > )+reload($SCRIPT_DIR/aerospace-ff-windows.sh all)\";
+        fi'" \
   --bind="/:transform:bash -c '
         if [[ \$FZF_PROMPT == \"All > \" ]]; then
             echo \"change-prompt(Workspace > )+reload($SCRIPT_DIR/aerospace-ff-windows.sh workspace)\";
@@ -22,7 +28,7 @@ selected=$("$SCRIPT_DIR/aerospace-ff-windows.sh" all | fzf \
         fi'" \
   --bind='ctrl-s:toggle-sort' \
   --bind="|:reload:$SCRIPT_DIR/aerospace-ff-windows.sh all" \
-  --bind="tab,esc:execute-silent(osascript -e 'tell application \"System Events\" to keystroke TAB using option down')" \
+  --bind="esc:execute-silent(osascript -e 'tell application \"System Events\" to keystroke TAB using option down')" \
   --tiebreak=begin,index \
   --cycle --layout=reverse --border --height=100% \
   --marker="*")
@@ -31,4 +37,3 @@ if [[ -n "$selected" ]]; then
   wid=$(echo "$selected" | cut -f1)
   aerospace focus --window-id "$wid"
 fi
-# --bind="esc:reload:$SCRIPT_DIR/aerospace-ff-windows.sh all" \

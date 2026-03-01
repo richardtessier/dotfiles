@@ -8,10 +8,16 @@ function ff --description 'List aerospace windows with progressive filtering'
         --nth=2.. \
         --tiebreak=begin,index \
         --prompt='All > ' \
-        --header='ctrl-w: cycle filter | ctrl-s: toggle sort' \
+        --header='/: cycle filter | ctrl-s: toggle sort | tab: All/iTerm2' \
         --bind='ctrl-s:toggle-sort' \
         --bind="enter:execute(aerospace focus --window-id {1})+abort" \
-        --bind="ctrl-w:transform:bash -c '
+        --bind="tab:transform:bash -c '
+            if [[ \$FZF_PROMPT == \"All > \" ]]; then
+                echo \"change-prompt(iTerm2 > )+reload($s iterm2)\";
+            else
+                echo \"change-prompt(All > )+reload($s all)\";
+            fi'" \
+        --bind="/:transform:bash -c '
             if [[ \$FZF_PROMPT == \"All > \" ]]; then
                 echo \"change-prompt(Workspace > )+reload($s workspace)\";
             elif [[ \$FZF_PROMPT == \"Workspace > \" ]]; then

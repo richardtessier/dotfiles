@@ -13,6 +13,7 @@ Personal dotfiles for macOS managed with [GNU Stow](https://www.gnu.org/software
 ```
 ~/dotfiles/
 ├── aerospace/     # AeroSpace window manager configuration
+├── claude/        # Claude Code settings
 ├── fish/          # Fish shell configuration
 ├── gh/            # GitHub CLI configuration
 ├── git/           # Git global settings
@@ -20,7 +21,7 @@ Personal dotfiles for macOS managed with [GNU Stow](https://www.gnu.org/software
 ├── lazygit/       # Lazygit terminal UI configuration
 ├── nvim/          # Neovim with LazyVim
 ├── vscode/        # Visual Studio Code settings (optional)
-├── scripts/       # Utility scripts
+├── scripts/       # Utility scripts (not stow-managed, see scripts/README.md)
 └── archive/       # Old/deprecated configs (not used)
 ```
 
@@ -67,7 +68,7 @@ From the `~/dotfiles` directory, run:
 
 ```bash
 # Install all packages at once
-stow fish nvim git aerospace gh lazygit
+stow fish nvim git aerospace gh lazygit claude
 
 # Or install them individually
 stow fish
@@ -76,6 +77,7 @@ stow git
 stow aerospace
 stow gh
 stow lazygit
+stow claude
 ```
 
 This creates symlinks:
@@ -84,6 +86,7 @@ This creates symlinks:
 - `~/.config/aerospace/` → `~/dotfiles/aerospace/.config/aerospace/`
 - `~/.config/gh/` → `~/dotfiles/gh/.config/gh/`
 - `~/.config/lazygit/` → `~/dotfiles/lazygit/.config/lazygit/`
+- `~/.claude/` → `~/dotfiles/claude/.claude/`
 - `~/.gitconfig` → `~/dotfiles/git/.gitconfig`
 - `~/.gitignore_global` → `~/dotfiles/git/.gitignore_global`
 - And so on...
@@ -172,9 +175,13 @@ chsh -s /opt/homebrew/bin/fish
 
 # 5. Stow dotfiles
 cd ~/dotfiles
-stow fish nvim git aerospace gh lazygit
+stow fish nvim git aerospace gh lazygit claude
 
-# 6. Launch Neovim to install plugins
+# 6. Set up iTerm2 scripts (see scripts/README.md)
+ln -s ~/dotfiles/scripts/iterm2-title-provider.py \
+  ~/Library/Application\ Support/iTerm2/Scripts/AutoLaunch/title_provider.py
+
+# 7. Launch Neovim to install plugins
 nvim
 ```
 
@@ -201,6 +208,7 @@ nvim
 - **AeroSpace**: i3-like tiling window manager for macOS
 
 ### Applications
+- **iTerm2**: Terminal emulator with Python API for scripting
 - **Claude Code**: AI coding assistant
 - **Neovide**: Neovim GUI
 
@@ -209,8 +217,11 @@ nvim
 ### Fish Shell
 - Custom keybindings for navigation (Ctrl+N/P for history, etc.)
 - fzf integration for fuzzy finding
-- iterm2 shell integration (disabled in Warp terminal)
+- iTerm2 shell integration (disabled in Warp terminal)
 - Plugins: fzf.fish, z (directory jumping)
+- `ws` function: opens an iTerm2 work session with Claude Code + Terminal tabs
+- `ff` function: fuzzy window picker with filter modes (All/iTerm2/Workspace/Floating)
+- Dynamic iTerm2 tab titles via `SetUserVar` escape sequences in `fish_prompt`
 
 ### Neovim
 - LazyVim distribution (preconfigured Neovim setup)
@@ -220,6 +231,16 @@ nvim
 ### AeroSpace
 - i3-like tiling window manager for macOS
 - Configuration in `~/dotfiles/aerospace/.config/aerospace/aerospace.toml`
+- Custom keybindings for workspace/window management, resize mode, layout toggling
+- Window picker via iTerm2 Hotkey Window (`aerospace-ff-pick.sh`)
+
+### iTerm2
+- **Title Provider** (`scripts/iterm2-title-provider.py`): Python API script that renders tab titles from `user.project` and `user.tabRole` variables, and syncs window title to active tab
+- **Work Sessions** (`ws` fish function): opens a 2-tab iTerm2 window (Claude Code + Terminal) with project-aware titles
+- Requires manual setup -- see `scripts/README.md`
+
+### Claude Code
+- Settings and configuration synced via stow
 
 ### GitHub CLI (gh)
 - Git protocol set to HTTPS

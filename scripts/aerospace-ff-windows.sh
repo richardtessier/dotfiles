@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# Usage: aerospace-ff-windows.sh [all|workspace|floating]
+# Usage: aerospace-ff-windows.sh [all|workspace|floating|iterm2]
 # Outputs tab-separated, ANSI-colored, column-aligned lines for fzf.
 
 mode="${1:-all}"
@@ -31,11 +31,19 @@ case "$mode" in
     *)         scope="--all" ;;
 esac
 
+filter_app=""
+if [[ "$mode" == "iterm2" ]]; then
+    filter_app="iTerm2"
+fi
+
 # shellcheck disable=SC2086
 aerospace list-windows $scope \
     --format '%{window-id}|%{app-name}|%{window-title}|%{workspace}|%{window-layout}' |
 while IFS='|' read -r wid app title ws layout; do
     if [[ "$mode" == "floating" && "$layout" != "floating" ]]; then
+        continue
+    fi
+    if [[ -n "$filter_app" && "$app" != "$filter_app" ]]; then
         continue
     fi
 
