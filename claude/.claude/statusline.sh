@@ -36,32 +36,17 @@ for ((i=0; i<empty; i++)); do
   bar="${bar}░"
 done
 
-# Get and shorten current directory to ~30 chars
-dir=$(echo "$input" | jq -r '.cwd // empty')
-[ -z "$dir" ] && dir="$PWD"
-
-# Replace home directory with ~
-dir="${dir/#$HOME/~}"
-
-# Shorten path if longer than 30 chars by removing middle directories
-max_len=30
-if [ ${#dir} -gt $max_len ]; then
-  IFS='/' read -ra parts <<< "$dir"
-  num_parts=${#parts[@]}
-
-  if [ $num_parts -gt 2 ]; then
-    # Keep first and last parts, collapse middle
-    first="${parts[0]}/${parts[1]}"
-    last="${parts[$((num_parts-1))]}"
-    dir="${first}/.../.../${last}"
-
-    # If still too long, just show .../last two dirs
-    if [ ${#dir} -gt $max_len ] && [ $num_parts -gt 3 ]; then
-      second_last="${parts[$((num_parts-2))]}"
-      dir=".../${second_last}/${last}"
-    fi
-  fi
+# Get project name: prefer session_name, fall back to basename of project_dir, then cwd
+project=$(echo "$input" | jq -r '.session_name // empty')
+if [ -z "$project" ]; then
+  project=$(echo "$input" | jq -r '.workspace.project_dir // empty')
+  [ -n "$project" ] && project=$(basename "$project")
 fi
+if [ -z "$project" ]; then
+  project=$(echo "$input" | jq -r '.cwd // empty')
+  [ -n "$project" ] && project=$(basename "$project")
+fi
+[ -z "$project" ] && project=$(basename "$PWD")
 
 # Output the statusline
-printf "[%s] %s %d%% (%s)" "$model" "$bar" "$used" "$dir"
+printf "[%s] %s %d%% (%s)" "$model" "$bar" "$used" "$project"

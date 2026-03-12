@@ -7,64 +7,52 @@
 		<dict>
 			<key>Action</key>
 			<integer>10001</integer>
+			<key>Chain</key>
+			<true/>
 			<key>Chain Mode</key>
 			<integer>0</integer>
 			<key>Children</key>
 			<array>
 				<dict>
 					<key>Action</key>
-					<integer>19</integer>
-					<key>Configuration Grid</key>
-					<dict>
-						<key>Configuration Grid: Columns</key>
-						<integer>5</integer>
-						<key>Configuration Grid: Rows</key>
-						<integer>9</integer>
-					</dict>
-					<key>Hot Key</key>
-					<dict>
-						<key>Identifier</key>
-						<string>042A7B21-F7A5-4615-AA80-316BEE15AE5D</string>
-						<key>Key Code</key>
-						<integer>12</integer>
-						<key>Modifier Flags</key>
-						<integer>794912</integer>
-						<key>Visual Representation</key>
-						<string>⌃⌥Q</string>
-					</dict>
+					<integer>51</integer>
 					<key>Identifier</key>
-					<string>042A7B21-F7A5-4615-AA80-316BEE15AE5D</string>
-					<key>Relative Frame</key>
-					<string>{{0.20000000000000001, 0.1111111111111111}, {0.60000000000000009, 0.7777777777777779}}</string>
-					<key>Title</key>
-					<string>Rich - Med Center</string>
+					<string>A649D4A1-6B71-4641-AAE4-CEE12872A135</string>
+					<key>Resize Anchor</key>
+					<integer>10</integer>
+					<key>Resize Height Unit</key>
+					<integer>0</integer>
+					<key>Resize Size</key>
+					<string>{900, 600}</string>
+					<key>Resize Width Unit</key>
+					<integer>0</integer>
 				</dict>
 				<dict>
 					<key>Action</key>
-					<integer>19</integer>
-					<key>Hot Key</key>
-					<dict>
-						<key>Identifier</key>
-						<string>5F938F76-FC3C-4A57-BEF0-E10B1D4FB218</string>
-						<key>Key Code</key>
-						<integer>13</integer>
-						<key>Modifier Flags</key>
-						<integer>794912</integer>
-						<key>Visual Representation</key>
-						<string>⌃⌥W</string>
-					</dict>
+					<integer>21</integer>
+					<key>Center Mode</key>
+					<integer>0</integer>
 					<key>Identifier</key>
-					<string>5F938F76-FC3C-4A57-BEF0-E10B1D4FB218</string>
-					<key>Relative Frame</key>
-					<string>{{0.16666666666666666, 0.1111111111111111}, {0.66666666666666663, 0.88888888888888884}}</string>
-					<key>Title</key>
-					<string>Rich - Large Center</string>
+					<string>F8141C27-3459-40F2-B2D0-A5726D8D7D35</string>
 				</dict>
 			</array>
+			<key>Children Expanded</key>
+			<true/>
+			<key>Hot Key</key>
+			<dict>
+				<key>Identifier</key>
+				<string>F8E7F66F-5422-41A1-99C1-AD93AE96F720</string>
+				<key>Key Code</key>
+				<integer>0</integer>
+				<key>Modifier Flags</key>
+				<integer>794912</integer>
+				<key>Visual Representation</key>
+				<string>⌃⌥A</string>
+			</dict>
 			<key>Identifier</key>
-			<string>611BB109-A2A7-4133-8EF7-FB2856C8DC64</string>
+			<string>F8E7F66F-5422-41A1-99C1-AD93AE96F720</string>
 			<key>Title</key>
-			<string>Quick</string>
+			<string>Rich - Small Center</string>
 		</dict>
 	</array>
 </dict>
