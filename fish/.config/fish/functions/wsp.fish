@@ -1,3 +1,3 @@
-function wsp --description 'Fuzzy-pick a Claude project and open with ws'
-    _fzf_search_ws
+function wsp --description 'Fuzzy-pick a Claude project and switch workspace'
+    _fzf_search_ws ws
 end
