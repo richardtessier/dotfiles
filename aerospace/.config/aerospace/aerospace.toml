@@ -9,8 +9,9 @@ after-login-command = []
 # You can use it to add commands that run after AeroSpace startup.
 # 'after-startup-command' is run after 'after-login-command'
 # Available commands : https://nikitabobko.github.io/AeroSpace/commands
-after-startup-command = []
-
+after-startup-command = [
+  'exec-and-forget borders active_color=0xffff9248 inactive_color=0xff494d64 width=5.0'
+]
 # Start AeroSpace at login
 start-at-login = true
 
@@ -379,7 +380,8 @@ equal = 'resize smart +100'
 
 f = ['layout floating tiling', 'mode main'] # Toggle between floating and tiling layout
 r = ['flatten-workspace-tree', 'mode main'] # reset layout
-t = ['exec-and-forget bash -c "$HOME/dotfiles/scripts/aerospace_tile_all.sh"', 'mode main'] # Tile all floating windows
+t = ['exec-and-forget bash -c "$HOME/dotfiles/scripts/aerospace_all_in_tree.sh tiles"', 'mode main'] # Tile all floating windows
+a = ['exec-and-forget bash -c "$HOME/dotfiles/scripts/aerospace_all_in_tree.sh accordion"', 'mode main'] # Tile all floating windows
 # n = 'move-node-to-monitor --wrap-around --focus-follows-window next'
 # p = 'move-node-to-monitor --wrap-around --focus-follows-window prev'
 # shift-n = 'move-node-to-workspace --wrap-around --focus-follows-window next'

@@ -1,8 +1,10 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# Nuclear "show everything" -- tile all floating windows, flatten the tree,
+# Nuclear "show everything" -- tile or accordion all floating windows, flatten the tree,
 # and set horizontal tiles for a clean side-by-side overview.
+# Usage: aerospace-all_in_tree.sh [tiles|accordion]
+target_layout="${1:-tiles}"
 
 # 1. Tile all floating windows (bring into tree)
 aerospace list-windows --workspace focused --format '%{window-id} %{window-layout}' |
@@ -16,4 +18,4 @@ aerospace list-windows --workspace focused --format '%{window-id} %{window-layou
 aerospace flatten-workspace-tree
 
 # 3. Set horizontal tiles (side-by-side overview)
-aerospace layout tiles horizontal
+aerospace layout "$target_layout" horizontal

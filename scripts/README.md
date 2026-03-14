@@ -4,27 +4,27 @@ Utility scripts used by AeroSpace, fish functions, and iTerm2. These are not sto
 
 ## AeroSpace Window Management
 
-| Script | Description |
-|--------|-------------|
-| `aerospace-ff-windows.sh` | Lists windows in tab-separated format for fzf. Modes: `all`, `workspace`, `floating`, `iterm2` |
-| `aerospace-ff-pick.sh` | Window picker for iTerm2 Hotkey Window profile. Uses fzf with `tab` (All/iTerm2 toggle), `/` (Workspace/Floating cycle) |
-| `aerospace-list-windows.sh` | Simple window listing helper |
-| `aerospace-list-workspaces.sh` | Simple workspace listing helper |
-| `aerospace_layout_all.sh` | Set layout on all windows in workspace |
-| `aerospace_tile_all.sh` | Tile all floating windows in workspace |
-| `aerospace_toggle_center.sh` | Toggle centered floating layout |
-| `aerospace_toggle_center_moom.sh` | Toggle centered floating layout via Moom |
+| Script                            | Description                                                                                                             |
+| --------------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
+| `aerospace-ff-windows.sh`         | Lists windows in tab-separated format for fzf. Modes: `all`, `workspace`, `floating`, `iterm2`                          |
+| `aerospace-ff-pick.sh`            | Window picker for iTerm2 Hotkey Window profile. Uses fzf with `tab` (All/iTerm2 toggle), `/` (Workspace/Floating cycle) |
+| `aerospace-list-windows.sh`       | Simple window listing helper                                                                                            |
+| `aerospace-list-workspaces.sh`    | Simple workspace listing helper                                                                                         |
+| `aerospace_layout_all.sh`         | Set layout on all windows in workspace                                                                                  |
+| `aerospace_all_in_tree.sh`        | Collect all floating windows into tree (tiles or accordion mode)                                                         |
+| `aerospace_toggle_center.sh`      | Toggle centered floating layout                                                                                         |
+| `aerospace_toggle_center_moom.sh` | Toggle centered floating layout via Moom                                                                                |
 
 ## iTerm2
 
-| Script | Description |
-|--------|-------------|
+| Script                     | Description                                                                                                                                 |
+| -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
 | `iterm2-title-provider.py` | iTerm2 Python API AutoLaunch script. Provides custom tab titles via TitleProviderRPC and syncs window title bar to active tab on tab switch |
 
 ## Other
 
-| Script | Description |
-|--------|-------------|
+| Script                 | Description                       |
+| ---------------------- | --------------------------------- |
 | `osx_fast_keyboard.sh` | Set fast key repeat rate on macOS |
 
 ## Manual Setup Steps

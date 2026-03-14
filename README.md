@@ -206,6 +206,7 @@ nvim
 
 ### Window Management
 - **AeroSpace**: i3-like tiling window manager for macOS
+- **Borders** (JankyBorders): Window border highlighting for macOS
 
 ### Applications
 - **iTerm2**: Terminal emulator with Python API for scripting
@@ -232,6 +233,7 @@ nvim
 - i3-like tiling window manager for macOS
 - Configuration in `~/dotfiles/aerospace/.config/aerospace/aerospace.toml`
 - Custom keybindings for workspace/window management, resize mode, layout toggling
+- Launches Borders on startup for active window highlighting (orange border)
 - Window picker via iTerm2 Hotkey Window (`aerospace-ff-pick.sh`)
 
 ### iTerm2
